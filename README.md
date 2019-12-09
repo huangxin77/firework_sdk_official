@@ -6,6 +6,7 @@ To integrate FireworkSDK into your applicaiton, you have to register your applic
 
 # Download
 To get FireworkSDK into your build:
+
 Step 1: Add the JitPack repository to your root build.gradle at the end of repositories:
 	
 			allprojects {
