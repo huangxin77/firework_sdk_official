@@ -7,7 +7,7 @@ To integrate FireworkSDK into your applicaiton, you have to register your applic
 # Download
 To get FireworkSDK into your build:
 
-Step 1: Add the JitPack repository to your root build.gradle at the end of repositories:
+Step 1: Add the JitPack repository to your root build.gradle at the end of repositories.
 	
 			allprojects {
 				repositories {
@@ -16,7 +16,7 @@ Step 1: Add the JitPack repository to your root build.gradle at the end of repos
 				}
 			}
 	   
-Step 2: Add the dependency to your app build.gradle:
+Step 2: Add the dependency to your app build.gradle.
 
 			dependencies {
 				implementation 'com.github.loopsocial:firework_sdk:v1.0.1'
