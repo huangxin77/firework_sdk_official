@@ -14,7 +14,8 @@ private val TAB_TITLES = arrayOf(
         R.string.pinned,
         R.string.grid,
         R.string.vertical,
-        R.string.player
+        R.string.player,
+        R.string.view
 )
 
 /**
@@ -64,7 +65,7 @@ class SectionsPagerAdapter(private val context: Context, val fm: FragmentManager
                 fragmentMap[position]!!
             }
 
-            else -> {
+            4 -> {
                 if (!fragmentMap.containsKey(position)) {
                     val fragment = FireworkPlayerFragment()
                     fragment.autoPlay = false
@@ -79,6 +80,12 @@ class SectionsPagerAdapter(private val context: Context, val fm: FragmentManager
                 fragmentMap[position]!!
 
 
+            }
+            else -> {
+                if (!fragmentMap.containsKey(position)) {
+                    fragmentMap[position] = VideoViewFragment.newInstance()
+                }
+                fragmentMap[position]!!
             }
         }
 

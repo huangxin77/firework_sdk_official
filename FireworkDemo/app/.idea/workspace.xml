@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c72d138c-b7e2-4565-bcf5-57edb96fa853" name="Default Changelist" comment="Merge branch 'master' of https://github.com/loopsocial/firework_sdk&#10;&#10;# Conflicts:&#10;#&#9;README.md">
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fireworklibrary/src/main/java/com/loopnow/fireworklibrary/views/VideoFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../fireworklibrary/src/main/java/com/loopnow/fireworklibrary/views/VideoFragment.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,11 +29,11 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/adapters/IntegratedAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
+            <state relative-caret-position="442">
               <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
             </state>
           </provider>
@@ -40,36 +41,28 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_fullscreen.xml">
-          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
               <caret line="23" column="55" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="55" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/SectionsPagerAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
-              <folding>
-                <element signature="e#42#306#0" expanded="true" />
-                <element signature="e#414#433#1" expanded="true" />
-                <element signature="e#443#458#1" expanded="true" />
-                <element signature="e#468#481#1" expanded="true" />
-                <element signature="e#491#508#1" expanded="true" />
-                <element signature="e#518#533#1" expanded="true" />
-              </folding>
+            <state relative-caret-position="398">
+              <caret line="107" column="1" lean-forward="true" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="1462">
+              <caret line="86" selection-start-line="86" selection-end-line="86" />
             </state>
           </provider>
         </entry>
@@ -77,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/MainActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="425">
               <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
               <folding>
                 <element signature="e#34#413#0" expanded="true" />
@@ -89,7 +82,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/FullscreenFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
+            <state relative-caret-position="459">
               <caret line="33" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
@@ -107,7 +100,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/GridFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="442">
               <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
               <folding>
                 <element signature="e#43#238#0" expanded="true" />
@@ -119,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/VerticalFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
+            <state relative-caret-position="493">
               <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
               <folding>
                 <element signature="e#44#192#0" expanded="true" />
@@ -130,12 +123,12 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_grid.xml">
-          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
+            <state relative-caret-position="544">
               <caret line="32" column="39" selection-start-line="32" selection-end-line="33" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -179,8 +172,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-35" />
-    <option name="y" value="34" />
+    <option name="x" value="3" />
+    <option name="y" value="33" />
     <option name="width" value="1677" />
     <option name="height" value="926" />
   </component>
@@ -194,14 +187,9 @@
     <panes>
       <pane id="Scope" />
       <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
             <path>
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
@@ -210,6 +198,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,34 +302,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-35" y="34" width="1677" height="926" extended-state="0" />
-    <editor active="true" />
+    <frame x="3" y="33" width="1677" height="926" extended-state="0" />
     <layout>
-      <window_info id="Capture Tool" />
-      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.20061162" />
-      <window_info id="Structure" side_tool="true" />
-      <window_info id="Build Variants" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="Resources Explorer" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Run" />
-      <window_info anchor="bottom" id="Logcat" />
-      <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="bottom" id="Android Profiler" />
-      <window_info anchor="bottom" id="Debug" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Build" visible="true" weight="0.34052756" />
-      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Fabric" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Preview" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20061162" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Run" order="0" />
+      <window_info anchor="bottom" id="Logcat" order="1" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.34052756" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Fabric" order="4" />
+      <window_info anchor="right" id="Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -359,73 +347,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cf4f438a4e46f4289df6bdaacc9882aa/jars/classes.jar!/com/loopnow/fireworklibrary/FireworkSDK.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/VerticalFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-          <folding>
-            <element signature="e#44#192#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/GridFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding>
-            <element signature="e#43#238#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_grid.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="32" column="39" selection-start-line="32" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/FullscreenFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cf4f438a4e46f4289df6bdaacc9882aa/jars/classes.jar!/com/loopnow/fireworklibrary/FireworkSDK.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/adapters/IntegratedAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
+        <state relative-caret-position="442">
           <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_fullscreen.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="55" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="55" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="425">
           <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
           <folding>
             <element signature="e#34#413#0" expanded="true" />
@@ -433,25 +380,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/SectionsPagerAdapter.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/FullscreenFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+        <state relative-caret-position="459">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/GridFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding>
-            <element signature="e#42#306#0" expanded="true" />
-            <element signature="e#414#433#1" expanded="true" />
-            <element signature="e#443#458#1" expanded="true" />
-            <element signature="e#468#481#1" expanded="true" />
-            <element signature="e#491#508#1" expanded="true" />
-            <element signature="e#518#533#1" expanded="true" />
+            <element signature="e#43#238#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/VerticalFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="493">
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+          <folding>
+            <element signature="e#44#192#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_grid.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="39" selection-start-line="32" selection-end-line="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/loopnow/fireworkdemo/ui/main/SectionsPagerAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="107" column="1" lean-forward="true" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
         </state>
       </provider>
     </entry>

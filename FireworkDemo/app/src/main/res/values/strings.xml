@@ -8,4 +8,5 @@
     <string name="fullscreen">Fullscreen</string>
     <string name="vertical">Vertical</string>
     <string name="player">Player</string>
+    <string name="view">VideoView</string>
 </resources>
