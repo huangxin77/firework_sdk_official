@@ -4,8 +4,8 @@ FireworkSDK is a library to integrate video feeds from ```Firework - a short for
 # Prerequisites 
 To integrate FireworkSDK into your applicaiton, you have to register your application with Firework platform. You have to provide <package_name> of your application which can be the same as your application_id or different. Once you register your application, you will be provided with unique app_id. The unique app_id is required to authenticate client with Firework platform. Check more details about its usage in the later sections. 
 
-# Download
-Coming soon
+# [Download](https://github.com/loopsocial/firework_sdk_official/blob/master/FireworkDemo.apk)
+
 
 # How to use FireworkSDK?
 FireworkSDK provides two options to integrate Firework video feed in your application and drop in your view hierarchy.
