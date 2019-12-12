@@ -17,17 +17,12 @@ In build.gradle of your app please add
 		------ 
 		------
 
-		implementation 'com.github.loopsocial:firework_sdk:v1.0.3'
-		implementation fileTree(include: ['frameless-release.aar'], dir: 'libs')
+		implementation 'com.github.loopsocial:firework_sdk:v1.0.4'
+		
 
 	}
 	
-	
-	You can download frameless-release.aar here 
-	https://github.com/loopsocial/firework_sdk_official/blob/master/FireworkDemo/app/libs/frameless-release.aar
-	
-	Please add frameless-release.aar to following path 
-	app/libs/
+
 	
 
 	In build.gradle of your project 
