@@ -27,7 +27,7 @@ In build.gradle of your app please add
 
 	In build.gradle of your project 
 
-	Please add 
+	Add 
 	
 	allprojects {
     		repositories {
