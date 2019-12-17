@@ -17,7 +17,7 @@ In build.gradle of your app please add
 		------ 
 		------
 
-		implementation 'com.github.loopsocial:firework_sdk:v1.0.4'
+		implementation 'com.github.loopsocial:firework_sdk:v1.1.1'
 		
 
 	}
