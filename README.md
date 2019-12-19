@@ -171,22 +171,43 @@ Once you initialize SDK, you can request video feed. The example below demonstra
 	
 Note that getVideoFeed returns object FeedResult 
 
-sealed class FeedResult {
-    object Loading : FeedResult()
-    object Error : FeedResult()
-    data class Videos(val videos: List<VideoMetaData>) : FeedResult()
-}
+	sealed class FeedResult {
+    		object Loading : FeedResult()
+    		object Error : FeedResult()
+    		data class Videos(val videos: List<VideoMetaData>) : FeedResult()
+	}
 	
-data class VideoMetaData (
-        var encoded_id: String = "",
-        var caption: String? = null,
-        var creator: Creator? = null,
-        var web_share_url: String? = null,
-        var likes_count: Int = 0,
-        var views_count: Int = 0,
-        var thumbnail_url: String?
-)
+	data class VideoMetaData (
+        	var encoded_id: String = "",
+        	var caption: String? = null,
+        	var creator: Creator? = null,
+        	var web_share_url: String? = null,
+        	var likes_count: Int = 0,
+        	var views_count: Int = 0,
+        	var thumbnail_url: String?
+	)
 
+
+Also if you are using VideoView, you can add VideoPlaybackStatusListener to get callbacks when video starts buffering, playing and paused. 
+	
+	fireworkVideoView.addVideoPlaybackStatusListener(new VideoView.VideoPlaybackStatusListener() {
+            @Override
+            public void buffering() {
+                Log.v("PlaybackLog", "Player buffering");
+            }
+
+            @Override
+            public void playing() {
+                Log.v("PlaybackLog", "Player Playing");
+
+            }
+
+            @Override
+            public void paused() {
+                Log.v("PlaybackLog", "Player Paused");
+
+            }
+        });
 
 If you are using ViewPager and PagerAdapter, you can inflate your view hierarchy that contains videoview and set video to be played using setVideo method of VideoView. Please refer to example below. This will looks different, depending on your view hierarchy. 
 
