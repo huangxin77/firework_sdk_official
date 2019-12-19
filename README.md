@@ -58,8 +58,7 @@ You can add the following fragment to your view hierarchy with requried paramete
 1. appId: This refers to app_id you received at the time of registering your application with Firework platform. FireworkSDK will throw exception in the absense of appid. It is a must attribute. Please contact Firework, if you don't already have one. 
 
 2. feedLayout: This is an optional attribute and specifies the layout used to display the video feed. The value of feedLayout can any of the following availale layouts. 
-
-* horizontal: Will layout video feed as a single row and will function as a horizontal scrollable view. 
+ - * horizontal: Will layout video feed as a single row and will function as a horizontal scrollable view. 
 
 	<img src="screenshots/Horizontal_video_list.png"  width="270" height="480">
 
