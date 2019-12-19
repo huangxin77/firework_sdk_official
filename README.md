@@ -5,49 +5,43 @@ FireworkSDK is a library to integrate video feeds from ```Firework - a short for
 https://github.com/loopsocial/firework_sdk_official/blob/master/FireworkDemo.apk
 
 # Prerequisites 
-To integrate FireworkSDK into your applicaiton, you have to register your application with Firework platform. You have to provide <package_name> of your application which can be the same as your application_id or different. Once you register your application, you will be provided with unique app_id. The unique app_id is required to authenticate client with Firework platform. Check more details about its usage in the later sections. 
+To integrate FireworkSDK into your applicaiton, you have to register your application with Firework platform. You have to provide <package_name> of your application and it must be the same as package name in AndroidManifest.xml. Once you register your application, you will be provided with unique app_id. The unique app_id is required to authenticate client with Firework platform. Check more details about its usage in the later sections. 
 
 # How to use library? 
 
-In build.gradle of your app please add 
+In build.gradle of your app, add 
 
 	dependencies {
-
 		------ other dependencies 
 		------ 
 		------
-
 		implementation 'com.github.loopsocial:firework_sdk:v1.1.1'
-		
-
 	}
-	
 
-	
-
-	In build.gradle of your project 
-
-	Add 
+	In build.gradle of your project, add 
 	
 	allprojects {
     		repositories {
         		--
 			---
 			--- 
-			// add the following 
         		maven { url 'https://jitpack.io' }
     		}
 	}
 
+# How to integrade firework video feed in your application using FireworkSDK?
+FireworkSDK provides two options to integrate Firework video feed in your application.
+- Fragment: This out of box solution. You can add FireworkVideoFeed fragment into your view hierarchy and you are good to go.   
+- VideoView: This is custom view and wraps FireworkVideoPlayer. It will play the video that you set with setVideo method. 
 
-# How to use FireworkSDK?
-FireworkSDK provides two options to integrate Firework video feed in your application and drop in your view hierarchy.
-- Fragment: It provides out of box solution wrapped in Firedwork video feed fragment with limited control over UX/UI. 
-- VideoView: It provides a VideoView then you can render and complete control over UX/UI by yourself.
+We will discuss both of these approaches in the subsequent sections. 
 
 **Fragment:**
 
-This is the quickest and easiest way to start seeing the Firework video feed in your applicaiton. The fragment will handle initializing ```FireworkSDK```, authenticating your applicaiton with ```Firework platform``` and displaying the video feed in your application. Add the following fragment to your view hierarchy with appropriate layout parameters and attributes and its done.  
+This is the quickest and easiest way to receiving Firework video feed in your applicaiton. The fragment will handle initializing ```FireworkSDK```, authenticating your applicaiton with ```Firework platform``` and displaying the video feed as well as handling video playback on your behalf in your application. The approach hides all the intricacies of authenticating,  requesting video feed and playing it. 
+
+
+You can add the following fragment to your view hierarchy with requried parameters and its done.  
 				
 			<fragment android:id="@+id/{your_fragment_id}"
 	   			android:name="com.loopnow.fireworklibrary.views.VideoFeedFragment"
@@ -61,32 +55,31 @@ This is the quickest and easiest way to start seeing the Firework video feed in 
            			app:imageStyle="@style/{your_image_style_for_video_thumbnail}">
 			</fragment>
 
-1. appId: This refers to app_id you received at the time of registering your application with Firework platform. FireworkSDK will throw exception in the absense of appid. It is a compulsory attribute. 
+1. appId: This refers to app_id you received at the time of registering your application with Firework platform. FireworkSDK will throw exception in the absense of appid. It is a must attribute. Please contact Firework, if you don't already have one. 
 
-2. feedLayout: This is an optional attribute and specifies the layout for the video feed. feedLayout can take any one of the three availavble layouts. 
+2. feedLayout: This is an optional attribute and specifies the layout used to display the video feed. The value of feedLayout can any of the following availale layouts. 
 
-* horizontal: Will layout video feed as a single row on a horizontal scrollable view. 
+* horizontal: Will layout video feed as a single row and will function as a horizontal scrollable view. 
 
 	<img src="screenshots/Horizontal_video_list.png"  width="270" height="480">
 
-* vertical: Will layout video feed as a single column on a vertical scrollable view.
+* vertical: Will layout video feed as a single column and will function as a vertical scrollable view.
 
 	<img src="screenshots/vertical.jpg"  width="270" height="480"> <img src="screenshots/vertical_with_title.jpg"  width="270" height="480">
 
 
-* grid: Will layout video feed in a multiple <rows> x <columns> format scrollable vertically. If optional attribute  ```app:columns``` is not specified, the default number of columns is 2. 
+* grid: Will layout video feed in a multiple <rows> x <columns> format. It will scroll vertically. If optional attribute  ```app:columns``` is not specified, the default columm number defaults to 2. Specify app:columns="number of columns you want" to have more or less than 2 columns.  
 
 	<img src="screenshots/grid.jpg"  width="270" height="480"> <img src="screenshots/grid_with_title.jpg"  width="270" height="480">
 
 
-3. columns: This is an optional attribute and is only relevant if feedLayout is grid and with default columns value 2. 
+3. columns: This is an optional attribute and is only relevant if feedLayout is grid. It has default value of 2. 
 
-4. showTitle: This is an optional attribute and can be either true or false. When true, video title is displayed below thumbnail. The default value is false and no title is displayed. The number of lines of title and the look and feel such as font, text color, and text size can be customized with optional attribute ```app:textStyle```.
+4. showTitle: This is an optional attribute. It can be either true or false. When true, video title is displayed below the thumbnail. The default value is false and no title is displayed. The number of lines of title and the look and feel such as font, text color, and text size can be customized with optional attribute ```app:textStyle```.
 
-5. textStyle: An optional attribute but we highly recommend you provide style for the video title if you have showTitle attribute set to true. See textStyle example as below.
+5. textStyle: This is an optional attribute and when specified the style is applied to TextView displaying video title. This attribute has no effect if you have showTitle set to false. 
 
 ```app:textStyle="@style/VideoTitleStyle"```
-
 	<style name="VideoTitleStyle">
         	<item name="android:textColor">#ff4a4a4a</item>
         	<item name="android:textSize">14dp</item>
@@ -107,6 +100,8 @@ Note that the value of attribute lines is also applied to maxLines.
 	</style>
 	
 	
+Pleas refer to source code, to learn more about using VideoFeedFragment 
+
 **VideoView**
 
 FireworkSDK provides view VideoView that you can embed in your view hierarchy. You can have control over player UX/UI.
