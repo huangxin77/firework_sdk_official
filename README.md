@@ -100,14 +100,22 @@ Note that the value of attribute lines is also applied to maxLines.
 	</style>
 	
 	
-Pleas refer to source code, to learn more about using VideoFeedFragment 
+Pleas refer to demo source code, to learn more about using VideoFeedFragment. 
 
 **VideoView**
 
-FireworkSDK provides view VideoView that you can embed in your view hierarchy. You can have control over player UX/UI.
-VideoView provides api to pause - pause(), resume - resume(), seek -seek(milliseconds), get progress - getProgress(), set video to be played - setVideo(videoId)
+If you need granular control over UX/UI and integrade Firework SDK the hard way ( which unfortunately is true ), you can use VideoView. 
+VideoView is custom view that encaspulates video playback. You can use VideoView as any other view in your view hierarchy. 
 
-If you want to use VideoView, you have to first initialize FireworkSDK and request video feed. 
+When you use VideoView, you also  
+1. Initialize FireworkSDK 
+2. Get VideoFeed
+3. Initialize VideoView in your adapter ( the one attached to recyclerview or viewpager )  and set video to be played 
+
+This is extra work that you don't need to worry about when using VideoFeedFragment.  
+
+
+Initialize FireworkSDK the following way -   
 
 	val fireworkSDK = FireworkSDK.initialize(applicationContext, appid, bundle_id, generateViewId(),
                         object : FireworkInitStatusListener {
@@ -125,6 +133,10 @@ If you want to use VideoView, you have to first initialize FireworkSDK and reque
                             }
                         })
 			
+
+VideoView provides api to pause - pause(), resume - resume(), seek -seek(milliseconds), get progress - getProgress(), set video to be played - setVideo(videoId)
+
+If you want to use VideoView, 
 			
 As discussed earlier, you receive appId at the time of registering your application with Firework platform, bundle_id is the same as your package name specified in your AndroidManifest and provided at the time of registering your application. You also need to provide unique id, which here is created with generateViewId() but you can choose another way of creating it. The last argument is FireworkInitStatusListener. You will implement three callbacks
 1. onInitializing()
