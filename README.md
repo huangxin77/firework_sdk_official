@@ -159,7 +159,7 @@ Once you initialize SDK, you can request video feed. The example below demonstra
                                 
 				adapter.setData(result.videos)
                                 view_pager.setCurrentItem(0, false)
-                                fireworkSDK.nowPlayingVideo(0, adapter.videoList[0])                    
+                                fireworkSDK.nowPlayingVideo(0, adapter.videoList[0].encoded_id)                    
                             }
                         }
                         adapter.notifyDataSetChanged()
@@ -167,6 +167,26 @@ Once you initialize SDK, you can request video feed. The example below demonstra
                 }
             }
         })
+	
+	
+Note that getVideoFeed returns object FeedResult 
+
+sealed class FeedResult {
+    object Loading : FeedResult()
+    object Error : FeedResult()
+    data class Videos(val videos: List<VideoMetaData>) : FeedResult()
+}
+	
+data class VideoMetaData (
+        var encoded_id: String = "",
+        var caption: String? = null,
+        var creator: Creator? = null,
+        var web_share_url: String? = null,
+        var likes_count: Int = 0,
+        var views_count: Int = 0,
+        var thumbnail_url: String?
+)
+
 
 If you are using ViewPager and PagerAdapter, you can inflate your view hierarchy that contains videoview and set video to be played using setVideo method of VideoView. Please refer to example below. This will looks different, depending on your view hierarchy. 
 
