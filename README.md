@@ -31,7 +31,7 @@ In build.gradle of your app, add
 
 # How to integrade firework video feed in your application using FireworkSDK?
 FireworkSDK provides two options to integrate Firework video feed in your application.
-- Fragment: This out of box solution. You can add FireworkVideoFeed fragment into your view hierarchy and you are good to go.   
+- Fragment: This out of box solution. You can add FireworkVideoFeed fragment into your view hierarchy and you are good to go. We highly recommend you use this approach.    
 - VideoView: This is custom view and wraps FireworkVideoPlayer. It will play the video that you set with setVideo method. 
 
 We will discuss both of these approaches in the subsequent sections. 
