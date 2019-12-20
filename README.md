@@ -20,7 +20,11 @@ In your AndroidManifest.xml, add
 			...
 		    </intent-filter>
 		</activity>
-
+		
+		// This is a must activity for playback.
+		<activity android:name="com.loopnow.fireworklibrary.PlaybackActivity"
+		    android:screenOrientation="portrait"/>
+		    
 		<uses-library android:name="org.apache.http.legacy" android:required="false"/>
 
 	</application>
