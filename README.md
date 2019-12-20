@@ -121,8 +121,9 @@ This is extra work that you don't need to worry about when using VideoFeedFragme
 	As discussed earlier, you receive appId at the time of registering your application with Firework platform, bundle_id 		is the same as your package name specified in your AndroidManifest and provided at the time of registering your 	application. You also need to provide unique id, which here is created with generateViewId() but you can choose 	another way of creating it. The last argument is FireworkInitStatusListener. 
 
 
-	val fireworkSDK = FireworkSDK.initialize(applicationContext, appid, bundle_id, generateViewId(),
-                        object : FireworkInitStatusListener {
+
+	val fireworkSDK = FireworkSDK.initialize(applicationContext, appid, bundle_id, generateViewId(),object : FireworkInitStatusListener {
+	
                             override fun onInitializing() {
                                  // SDK is in the process of initializing 
                             }
@@ -139,9 +140,9 @@ This is extra work that you don't need to worry about when using VideoFeedFragme
                         })
 			
 
-* Get VideoFeed
-
-	fireworkSDK.getVideoFeed().observe(this, Observer {
+* Get VideoFeed	
+                        
+		fireworkSDK.getVideoFeed().observe(this, Observer {
             it?.let { result ->
                 when (result) {
                     is FeedResult.Loading -> {
@@ -160,7 +161,7 @@ This is extra work that you don't need to worry about when using VideoFeedFragme
 			// If you just append it to existing list, the videos that users may like will be qeueued at the very end v/s playing those videos as soon as possible. 
 			// pass 1 in case you are using recyclerview in the place of view_pager.offscreenPageaLimit 
 			
-                        if (adapter.videoList.size > 0) {
+			if (adapter.videoList.size > 0) {
                             fireworkSDK.preparePlayableList(adapter.videoList, result.videos, adapter.currentVideo, 					view_pager.offscreenPageLimit)
                         } else {
                             may be you can set data to adapter, since adapter data set is empty 
@@ -209,7 +210,7 @@ Also you can add VideoPlaybackStatusListener to get callbacks when video starts 
             fun duration(duration: Long){
 	    }
 	
-        });
+	});
 
 If you are using ViewPager and PagerAdapter, you can inflate your view hierarchy that contains videoview and set video to be played using setVideo method of VideoView. Please refer to example below. This will looks different, depending on your view hierarchy. 
 
