@@ -18,28 +18,31 @@ In build.gradle of your app, add
 		implementation 'com.github.loopsocial:firework_sdk:v1.1.1'
 	}
 
-	In build.gradle of your project, add 
+
+	android {
+		dataBinding {
+		enabled = true
+	}
+
+	compileOptions {
+		sourceCompatibility 1.8
+		targetCompatibility 1.8
+	     }
+	}
+	
+In build.gradle of your project, add 
 	
 	allprojects {
-    		repositories {
-        		--
+		repositories {
+			--
 			---
 			--- 
-        		maven { url 'https://jitpack.io' }
-    		}
+			maven { url 'https://jitpack.io' }
+		}
 	}
 	
 	
-	android {
-		 dataBinding {
-        	enabled = true
-    	}
-
-    	compileOptions {
-        	sourceCompatibility 1.8
-        	targetCompatibility 1.8
-    	     }
-	}
+	
 
 # How to integrade firework video feed in your application using FireworkSDK?
 FireworkSDK provides two options to integrate Firework video feed in your application.
