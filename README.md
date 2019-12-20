@@ -9,6 +9,22 @@ To integrate FireworkSDK into your applicaiton, you have to register your applic
 
 # How to use library? 
 
+In your AndroidManifest.xml, add
+
+	<application
+	
+		<activity android:name=".MainActivity">
+		    <intent-filter>
+			<action android:name="android.intent.action.MAIN" />
+			<category android:name="android.intent.category.LAUNCHER" />
+			...
+		    </intent-filter>
+		</activity>
+
+		<uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+	</application>
+    
 In build.gradle of your app, add 
 
 	dependencies {
