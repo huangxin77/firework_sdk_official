@@ -121,22 +121,23 @@ This is extra work that you don't need to worry about when using VideoFeedFragme
 	As discussed earlier, you receive appId at the time of registering your application with Firework platform, bundle_id 		is the same as your package name specified in your AndroidManifest and provided at the time of registering your 	application. You also need to provide unique id, which here is created with generateViewId() but you can choose 	another way of creating it. The last argument is FireworkInitStatusListener. 
 	
 	
-		val fireworkSDK = FireworkSDK.initialize(applicationContext, appid, bundle_id, generateViewId(),object : FireworkInitStatusListener {
+		val fireworkSDK = FireworkSDK.initialize(applicationContext, appid, bundle_id, 
+			generateViewId(),object : FireworkInitStatusListener {
 	
-                            override fun onInitializing() {
-                                 // SDK is in the process of initializing 
-                            }
+		    override fun onInitializing() {
+			 // SDK is in the process of initializing 
+		    }
 
-                            override fun onInitCompleted() {
-                                // Initialization completed. 
-				// This is also a good time to request feed                                
-                            }
+		    override fun onInitCompleted() {
+			// Initialization completed. 
+			// This is also a good time to request feed                                
+		    }
 
-                            override fun onInitFailed(error: String) {
-                                // Handle error here 
-				// Initialization failed. 
-                            }
-                        })
+		    override fun onInitFailed(error: String) {
+			// Handle error here 
+			// Initialization failed. 
+		    }
+		})
 			
 
 * Get VideoFeed	
