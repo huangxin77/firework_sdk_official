@@ -76,7 +76,7 @@ dependencies {
     //kapt 'com.github.bumptech.glide:compiler:4.4.0'
 
 
-    implementation 'com.github.loopsocial:firework_sdk:v1.1.15'
+    implementation 'com.github.loopsocial:firework_sdk:v1.1.16'
 
 
 
