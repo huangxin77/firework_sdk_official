@@ -12,12 +12,11 @@ To integrate FireworkSDK into your applicaiton, you have to register your applic
 In your AndroidManifest.xml, add
 
 	<application	
-	.....
-		// This is a must activity for playback.
+		// Activity needed for video playback when.
 		<activity android:name="com.loopnow.fireworklibrary.PlaybackActivity"
-		    android:screenOrientation="portrait"/>
-		    
-		<uses-library android:name="org.apache.http.legacy" android:required="true"/>
+		    android:screenOrientation="portrait"
+		    android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
+		    />
 	</application>
     
 In build.gradle of your app, add 
