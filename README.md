@@ -8,6 +8,7 @@ https://github.com/loopsocial/firework_sdk_official/blob/master/FireworkDemo.apk
 To integrate FireworkSDK into your applicaiton, you have to register your application with Firework platform. You have to provide <package_name> or application_id of your application. If application_id is different than the package name, you need to provide application_id. Once you register your application, you will be provided with unique app_id. The unique app_id is required to authenticate client with Firework platform. Check more details about its usage in the later sections. 
 
 # How to use library? 
+[![](https://jitpack.io/v/loopsocial/firework_sdk.svg)](https://jitpack.io/#loopsocial/firework_sdk)
 
 In your AndroidManifest.xml, add
 
