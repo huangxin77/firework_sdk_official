@@ -26,7 +26,7 @@ In build.gradle of your app, add
 		------ other dependencies 
 		------ 
 		------
-		implementation 'com.github.loopsocial:firework_sdk:v1.1.19'
+		implementation 'com.github.loopsocial:firework_sdk:v1.1.20' 
 	}
 
 
