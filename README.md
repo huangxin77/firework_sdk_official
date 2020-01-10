@@ -12,42 +12,47 @@ app_id.
 
 The app_id is used to authenticate your application with the server. Authentication will fail if your application's applicationId / package name is different from what you provided, or you use wrong app_id. 
  
-### How to use library? 
+### How to add library to your project? 
 [![](https://jitpack.io/v/loopsocial/firework_sdk.svg)](https://jitpack.io/#loopsocial/firework_sdk)
 
-- [AndroidManifest] 
-In your AndroidManifest.xml, add
+- [X] In AndroidManifest.xml, add 
 
 	<application	
+		....
+		....
+		
 		// Activity needed for video playback when.
-		<activity android:name="com.loopnow.fireworklibrary.PlaybackActivity"
-		    android:screenOrientation="portrait"
-		    android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
-		    />
+		 <activity android:name="com.loopnow.fireworklibrary.PlaybackActivity"
+		 android:screenOrientation="portrait"
+		 android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
+		 />
 	</application>
     
-In build.gradle of your app, add 
+- [X] In your application's build.gradle, add 
 
 	dependencies {
 		------ other dependencies 
 		------ 
 		------
-		implementation 'com.github.loopsocial:firework_sdk:v1.1.20' 
+		implementation 'com.github.loopsocial:firework_sdk:v1.1.22' 
 	}
-
 
 	android {
+		.....
+		.....
+		
 		dataBinding {
-		enabled = true
-	}
+			enabled = true
+		}
 
-	compileOptions {
-		sourceCompatibility 1.8
-		targetCompatibility 1.8
-	     }
+		compileOptions {
+			sourceCompatibility 1.8
+			targetCompatibility 1.8
+	     	}
 	}
 	
-In build.gradle of your project, add 
+- [X] In your project's build.gradle, add 
+	
 	
 	allprojects {
 		repositories {
@@ -58,14 +63,15 @@ In build.gradle of your project, add
 		}
 	}
 	
-In proguard-rules.pro, add 
-
+- [X] In proguard-rules.pro, add 
 	-keepclassmembers class com.loopnow.fireworklibrary.** { <fields>; }
 
 
-# How to integrade firework video feed in your application using FireworkSDK?
+
+### Integrating video feed in your application.  
 
 There are two ways of integrating Firework video feed in your application. 
+
 
 1. VideoFeedFragment: If you want to display video thumbnails and start playing the video only after user clicks on one of them, then dropping VideoFeedFragment into your view hierarchy is the easiest and quickest way to integrate firework video feed into your app. VideoFeedFragment displays thumbnails in one of three supported layouts: 
 
