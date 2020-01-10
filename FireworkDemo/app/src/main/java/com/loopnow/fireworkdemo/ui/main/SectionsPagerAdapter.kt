@@ -11,11 +11,11 @@ import com.loopnow.fireworklibrary.views.FireworkPlayerFragment
 import com.loopnow.fireworklibrary.views.VideoFragment
 
 private val TAB_TITLES = arrayOf(
-        R.string.integrated,
-        R.string.pinned,
+        R.string.integrated
+       /* R.string.pinned,
         R.string.grid,
         R.string.vertical,
-        R.string.player
+        R.string.player*/
         //R.string.view
 )
 

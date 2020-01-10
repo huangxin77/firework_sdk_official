@@ -6,6 +6,14 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/parijat/firework_sdk_official/firework_sdk_official/FireworkDemo/loop-release-key.keystore')
+            storePassword 'LoopMeIn!'
+            keyAlias = 'dd-key-alias'
+            keyPassword 'LoopMeIn!'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         minSdkVersion 21
@@ -13,11 +21,17 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+                minifyEnabled true
+
         }
     }
 
