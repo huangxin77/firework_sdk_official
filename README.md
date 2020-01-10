@@ -17,7 +17,7 @@ The app_id is used to authenticate your application with the server. Authenticat
 
 - [X] In AndroidManifest.xml, add 
 
-	<application	
+	<application>	
 		....
 		....
 		
@@ -30,41 +30,43 @@ The app_id is used to authenticate your application with the server. Authenticat
     
 - [X] In your application's build.gradle, add 
 
-	dependencies {
-		------ other dependencies 
-		------ 
-		------
-		implementation 'com.github.loopsocial:firework_sdk:v1.1.22' 
-	}
-
-	android {
-		.....
-		.....
-		
-		dataBinding {
-			enabled = true
+		dependencies {
+			------ other dependencies 
+			------ 
+			------
+			implementation 'com.github.loopsocial:firework_sdk:v1.1.22' 
 		}
 
-		compileOptions {
-			sourceCompatibility 1.8
-			targetCompatibility 1.8
-	     	}
-	}
+		android {
+			.....
+			.....
+		
+			dataBinding {
+				enabled = true
+			}
+
+			compileOptions {
+				sourceCompatibility 1.8
+				targetCompatibility 1.8
+	     		}
+		}
 	
 - [X] In your project's build.gradle, add 
 	
 	
-	allprojects {
-		repositories {
-			--
-			---
-			--- 
-			maven { url 'https://jitpack.io' }
+		allprojects {
+			repositories {
+			
+				--
+				---
+				--- 
+				maven { url 'https://jitpack.io' }
+			}
 		}
-	}
 	
 - [X] In proguard-rules.pro, add 
-	-keepclassmembers class com.loopnow.fireworklibrary.** { <fields>; }
+		
+		-keepclassmembers class com.loopnow.fireworklibrary.** { <fields>; }
 
 
 
