@@ -17,16 +17,16 @@ The app_id is used to authenticate your application with the server. Authenticat
 
 - [X] In AndroidManifest.xml, add 
 
-	<application>	
+		<application>	
 		....
 		....
 		
-		// Activity needed for video playback when.
-		 <activity android:name="com.loopnow.fireworklibrary.PlaybackActivity"
-		 android:screenOrientation="portrait"
-		 android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
-		 />
-	</application>
+			// Activity needed for video playback when.
+		 	<activity android:name="com.loopnow.fireworklibrary.PlaybackActivity"
+		 	android:screenOrientation="portrait"
+		 	android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
+		 	/>
+		</application>
     
 - [X] In your application's build.gradle, add 
 
