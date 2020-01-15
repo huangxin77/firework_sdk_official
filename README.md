@@ -13,6 +13,8 @@ app_id.
 The app_id is used to authenticate your application with the server. Authentication will fail if your application's applicationId / package name is different from what you provided, or you use wrong app_id. 
  
 ### How to add library to your project? 
+
+The latest SDK version is 
 [![](https://jitpack.io/v/loopsocial/firework_sdk.svg)](https://jitpack.io/#loopsocial/firework_sdk)
 
 - [X] In AndroidManifest.xml, add 
@@ -34,7 +36,7 @@ The app_id is used to authenticate your application with the server. Authenticat
 			------ other dependencies 
 			------ 
 			------
-			implementation 'com.github.loopsocial:firework_sdk:v1.1.22' 
+			implementation 'com.github.loopsocial:firework_sdk:{latest_version}' 
 		}
 
 		android {
