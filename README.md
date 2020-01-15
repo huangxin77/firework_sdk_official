@@ -77,9 +77,9 @@ There are two ways of integrating Firework video feed in your application.
 
 1. VideoFeedFragment: If you want to display video thumbnails and start playing the video only after user clicks on one of them, then dropping VideoFeedFragment into your view hierarchy is the easiest and quickest way to integrate firework video feed into your app. VideoFeedFragment displays thumbnails in one of three supported layouts: 
 
-1. Vertical
-2. Horizontal
-3. Grid
+- Vertical
+- Horizontal
+- Grid
 
 Here is an example of VideoFeedFragment that you can modify according to your needs and add to view hierarchy. 
 
