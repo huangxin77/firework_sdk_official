@@ -23,8 +23,8 @@ The app_id is used to authenticate your application with the server. Authenticat
 		
 			// Activity needed for video playback when.
 		 	<activity android:name="com.loopnow.fireworklibrary.PlaybackActivity"
-		 	android:screenOrientation="portrait"
-		 	android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
+		 		android:screenOrientation="portrait"
+		 		android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
 		 	/>
 		</application>
     
