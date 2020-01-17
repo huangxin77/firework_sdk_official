@@ -1,71 +1,87 @@
-# FireworkSDK
+### FireworkSDK
 FireworkSDK is a library to integrate video feeds from ```Firework - a short form video platform``` into your Android application. 
 
-# FireworkSDK Demo 
+### FireworkSDK Demo 
 https://github.com/loopsocial/firework_sdk_official/blob/master/FireworkDemo.apk
 
-# Prerequisites 
-To integrate FireworkSDK into your applicaiton, you have to register your application with Firework platform. You have to provide <package_name> or application_id of your application. If application_id is different than the package name, you need to provide application_id. Once you register your application, you will be provided with unique app_id. The unique app_id is required to authenticate client with Firework platform. Check more details about its usage in the later sections. 
+### Prerequisites 
+To integrate FireworkSDK into your applicaiton, you have to register your application with Firework platform and get unique
+app_id.
+- [X] Provide your application's applicationId / package name to the business team / engineering team you are co-ordinating with. If your applicationId is different from package name, provide applicationId.
+- [X] We will email you the app_id.
 
-# How to use library? 
+The app_id is used to authenticate your application with the server. Authentication will fail if your application's applicationId / package name is different from what you provided, or you use wrong app_id. 
+ 
+### How to add library to your project? 
+
+The latest SDK version is 
 [![](https://jitpack.io/v/loopsocial/firework_sdk.svg)](https://jitpack.io/#loopsocial/firework_sdk)
 
-In your AndroidManifest.xml, add
+- [X] In AndroidManifest.xml, add 
 
-	<application	
-		// Activity needed for video playback when.
-		<activity android:name="com.loopnow.fireworklibrary.PlaybackActivity"
-		    android:screenOrientation="portrait"
-		    android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
-		    />
-	</application>
+		<application>	
+		....
+		....
+		
+			// Activity needed for video playback when.
+		 	<activity android:name="com.loopnow.fireworklibrary.PlaybackActivity"
+		 		android:screenOrientation="portrait"
+		 		android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
+		 	/>
+		</application>
     
-In build.gradle of your app, add 
+- [X] In your application's build.gradle, add 
 
-	dependencies {
-		------ other dependencies 
-		------ 
-		------
-		implementation 'com.github.loopsocial:firework_sdk:v1.1.20' 
-	}
-
-
-	android {
-		dataBinding {
-		enabled = true
-	}
-
-	compileOptions {
-		sourceCompatibility 1.8
-		targetCompatibility 1.8
-	     }
-	}
-	
-In build.gradle of your project, add 
-	
-	allprojects {
-		repositories {
-			--
-			---
-			--- 
-			maven { url 'https://jitpack.io' }
+		dependencies {
+			------ other dependencies 
+			------ 
+			------
+			implementation 'com.github.loopsocial:firework_sdk:{latest_version}' 
 		}
-	}
+
+		android {
+			.....
+			.....
+		
+			dataBinding {
+				enabled = true
+			}
+
+			compileOptions {
+				sourceCompatibility 1.8
+				targetCompatibility 1.8
+	     		}
+		}
 	
-In proguard-rules.pro, add 
+- [X] In your project's build.gradle, add 
+	
+	
+		allprojects {
+			repositories {
+			
+				--
+				---
+				--- 
+				maven { url 'https://jitpack.io' }
+			}
+		}
+	
+- [X] In proguard-rules.pro, add 
+		
+		-keepclassmembers class com.loopnow.fireworklibrary.** { <fields>; }
 
-	-keepclassmembers class com.loopnow.fireworklibrary.** { <fields>; }
 
 
-# How to integrade firework video feed in your application using FireworkSDK?
+### Integrating video feed in your application.  
 
 There are two ways of integrating Firework video feed in your application. 
 
+
 1. VideoFeedFragment: If you want to display video thumbnails and start playing the video only after user clicks on one of them, then dropping VideoFeedFragment into your view hierarchy is the easiest and quickest way to integrate firework video feed into your app. VideoFeedFragment displays thumbnails in one of three supported layouts: 
 
-1. Vertical
-2. Horizontal
-3. Grid
+- Vertical
+- Horizontal
+- Grid
 
 Here is an example of VideoFeedFragment that you can modify according to your needs and add to view hierarchy. 
 
