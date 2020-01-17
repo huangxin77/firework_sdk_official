@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 android {
+    compileSdkVersion 28
+
     signingConfigs {
         release {
             storeFile file('/Users/parijat/firework_sdk_official/firework_sdk_official/FireworkDemo/loop-release-key.keystore')
@@ -14,7 +16,7 @@ android {
             keyPassword 'LoopMeIn!'
         }
     }
-    compileSdkVersion 28
+
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 28
@@ -22,16 +24,13 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.release
+
     }
+
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-
-        debug {
-                minifyEnabled true
-
         }
     }
 
@@ -90,7 +89,7 @@ dependencies {
     //kapt 'com.github.bumptech.glide:compiler:4.4.0'
 
 
-    implementation 'com.github.loopsocial:firework_sdk:v1.1.16'
+    implementation 'com.github.loopsocial:firework_sdk:v1.1.26'
 
 
 

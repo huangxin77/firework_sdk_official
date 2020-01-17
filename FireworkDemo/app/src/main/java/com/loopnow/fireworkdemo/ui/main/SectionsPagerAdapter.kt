@@ -11,11 +11,11 @@ import com.loopnow.fireworklibrary.views.FireworkPlayerFragment
 import com.loopnow.fireworklibrary.views.VideoFragment
 
 private val TAB_TITLES = arrayOf(
-        R.string.integrated
-       /* R.string.pinned,
+        R.string.integrated,
+        R.string.pinned,
         R.string.grid,
         R.string.vertical,
-        R.string.player*/
+        R.string.player
         //R.string.view
 )
 
@@ -98,9 +98,9 @@ class SectionsPagerAdapter(private val context: Context, val fm: FragmentManager
             (fragmentMap[4] as FireworkPlayerFragment).pausePlayback()
         }
 
-        if(current == 5 ) {
+        /*if(current == 5 ) {
             (fragmentMap[5] as VideoViewFragment).pausePlayback()
-        }
+        }*/
 
         lastPage = current
         current = page
@@ -109,9 +109,9 @@ class SectionsPagerAdapter(private val context: Context, val fm: FragmentManager
             (fragmentMap[4] as FireworkPlayerFragment).startPlayback()
         }
 
-        if(current == 5 ) {
+        /*if(current == 5 ) {
             (fragmentMap[5] as VideoViewFragment).resumePlayback()
-        }
+        }*/
 
 
 

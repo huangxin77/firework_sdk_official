@@ -22,6 +22,7 @@
             android:layout_height="match_parent"
             android:name="com.loopnow.fireworklibrary.views.FireworkPlayerFragment"
             app:appid="BQEaIb9E80fiqAyaNQ5uv5_II5lXL3ET"
+            app:page_type="feed"
             android:id="@+id/firework_player"
             android:tag="player_fragment"
 

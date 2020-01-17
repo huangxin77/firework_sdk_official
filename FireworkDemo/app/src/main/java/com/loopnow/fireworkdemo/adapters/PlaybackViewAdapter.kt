@@ -46,7 +46,7 @@ class PlaybackViewAdapter(val context: Context, val sdk: FireworkSDK) : PagerAda
         val videoView = if(layout.childCount > 0) layout.getChildAt(0) as VideoView else null
 
         videoView?.apply {
-            setVideo(video,position, sdk)
+            setVideo(video, sdk)
         } ?: run {
         }
         collection.addView(layout)
