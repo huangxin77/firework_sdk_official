@@ -103,25 +103,21 @@ Here is an example of VideoFeedFragment that you can modify according to your ne
 
 - app:feedLayout={grid | horizontal | vertical} : This attribute specifies the layout for displaying thumbnails. The possible values are 
 		
-		1. grid : Will layout video feed in a multiple <rows> x <columns> format. It will scroll vertically. 
-		If optional attribute  ```app:columns``` is not specified, the default columm number defaults to 2. 
+1. Grid: Will layout video feed in a multiple ```rows> x <columns>``` format. 
+It will scroll vertically. If optional attribute ```app:columns``` is not specified, the default columm number defaults to 2. 	
 		
-		
-	<img src="screenshots/grid.jpg"  width="270" height="480"> 
-	<img src="screenshots/grid_with_title.jpg"  width="270" height="480">
+<img src="screenshots/grid.jpg"  width="270" height="480"> <img src="screenshots/grid_with_title.jpg"  width="270" height="480">
 			
 			
-		2. horizontal: Will layout video feed as a single row and will function as a horizontal scrollable view.
+2. horizontal: Will layout video feed as a single row and will function as a horizontal scrollable view.
 		  
-	<img src="screenshots/Horizontal_video_list.png"  width="270" height="480">
+<img src="screenshots/Horizontal_video_list.png"  width="270" height="480">
 	
-		3. vertical : Will layout video feed as a single column and will function as a vertical scrollable view.
+3. vertical : Will layout video feed as a single column and will function as a vertical scrollable view.
 		
-	<img src="screenshots/vertical.jpg"  width="270" height="480"> 
-	<img src="screenshots/vertical_with_title.jpg"  width="270" height="480">
+<img src="screenshots/vertical.jpg"  width="270" height="480"> <img src="screenshots/vertical_with_title.jpg"  width="270" height="480">
 	
-		
-	       We recommend using layout_height="match_parent" when feedLayout is specified as either Vertical or Grid and 		  using definite height defined either as % of the parent viewgroup's height or specified in terms of dp when 		       feedLayout is horizontal 
+We recommend using layout_height="match_parent" when feedLayout is specified as either Vertical or Grid and 		  using definite height defined either as % of the parent viewgroup's height or specified in terms of dp when 		       feedLayout is horizontal 
 	       
 	       e.g 
 	       
@@ -129,7 +125,9 @@ Here is an example of VideoFeedFragment that you can modify according to your ne
 	          layout_height="match_parent"
 		  
 	       2. feedLayout="horizontal" 
-	       	  layout_height="200dp" or if you are using ConstraintLayout
+	       	  layout_height="200dp" 
+		  
+		  or if you are using ConstraintLayout
 		  
 		  layout_height="0dp" 
 		  app:layout_constraintHeight_default="percent"
