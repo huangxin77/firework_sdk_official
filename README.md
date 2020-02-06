@@ -131,7 +131,7 @@ We recommend using layout_height="match_parent" when feedLayout is specified as 
 		  
 		  layout_height="0dp" 
 		  app:layout_constraintHeight_default="percent"
-                  app:layout_constraintHeight_percent="0.40"
+              app:layout_constraintHeight_percent="0.40"
 		
 - app:appid: This refers to app_id you received at the time of registering your application with Firework platform. FireworkSDK will throw exception in the absense of app_id. It is a must attribute. Please contact Firework, if you don't already have one. 
 
