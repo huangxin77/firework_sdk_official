@@ -179,10 +179,9 @@ We recommend using layout_height="match_parent" when feedLayout is specified as 
 
 		<fragment android:id="@+id/video_fragment"
                   	android:name="com.loopnow.fireworklibrary.views.VideoFeedFragment"
-                  
-                  	app:gutterSpace="8dp"
-			app:gutterSpace="{your_desired_value}"
+                  	app:itemLayout="@layout/{your_custom_layout}
         		/>
+When you provide your custom layout, it is must that the layout includes TextView with id caption and ImageView with id thumbnail. 
 
 Please refer to source code layout/fragment_grid.xml to know more about using VideoFeedFragment.  
 
