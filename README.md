@@ -27,6 +27,25 @@ The latest SDK version  is [![](https://jitpack.io/v/loopsocial/firework_sdk.svg
 		 		android:screenOrientation="portrait"
 		 		android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
 		 	/>
+			
+			// Activity needed for starting a web browser , when CTA on the advertisement is clicked. 
+			<activity android:name="com.loopnow.fireworklibrary.views.FireworkWebClientActivity"
+            			android:theme="@style/AppTheme.NoActionBar.FullScreen"
+            		/>
+			
+			// Service used for prefetching of next video , if all data for currently playing video is fetched. 
+        		<service android:name="com.loopnow.fireworklibrary.views.CacheService" />
+
+        		// Instead of providing app_id in VideoFeedFragment xml , you can specify it in AndroidManifest.xml
+			<meta-data android:name="Firework:AppID" android:value="DBuRec6_TCdMz_KMpSzHA1ins69ZDnhn" />
+        
+			// We plan on using advertising_id to improve target ads so that you can monetize better. 
+			// This is needed for to get advertising id using Android ad sdk.  
+			<meta-data
+            			android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            			android:value="true"/>
+	    
+	    
 		</application>
     
 - [X] In your application's build.gradle, add 
