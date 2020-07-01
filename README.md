@@ -27,6 +27,25 @@ The latest SDK version  is [![](https://jitpack.io/v/loopsocial/firework_sdk.svg
 		 		android:screenOrientation="portrait"
 		 		android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
 		 	/>
+			
+			// Activity needed for starting a web browser , when CTA on the advertisement is clicked. 
+			<activity android:name="com.loopnow.fireworklibrary.views.FireworkWebClientActivity"
+            			android:theme="@style/AppTheme.NoActionBar.FullScreen"
+            		/>
+			
+			// Service used for prefetching of next video , if all data for currently playing video is fetched. 
+        		<service android:name="com.loopnow.fireworklibrary.views.CacheService" />
+
+        		// Instead of providing app_id in VideoFeedFragment xml , you can specify it in AndroidManifest.xml
+			<meta-data android:name="Firework:AppID" android:value="{app_id provided to you}" />
+        
+			// We plan on using advertising_id to improve target ads so that you can monetize better. 
+			// This is needed for to get advertising id using Android ad sdk.  
+			<meta-data
+            			android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            			android:value="true"/>
+	    
+	    
 		</application>
     
 - [X] In your application's build.gradle, add 
@@ -73,28 +92,27 @@ The latest SDK version  is [![](https://jitpack.io/v/loopsocial/firework_sdk.svg
 
 ### Integrating video feed in your application.  
 
-There are three ways of integrating Firework video feed in your application. 
+There are two ways of integrating Firework video feed in your application. 
 
 
-1. VideoFeedFragment: If you want to display video thumbnails and start playing the video only after user clicks on one of them, then dropping VideoFeedFragment into your view hierarchy is the easiest and quickest way to integrate firework video feed into your app. VideoFeedFragment displays thumbnails in one of three supported layouts: 
+1. VideoFeedView: If you want to display video thumbnails and start playing the video only after user clicks on one of them, then dropping custom view, VideoFeedView into your view hierarchy is the easiest and quickest way to integrate firework video feed into your app. VideoFeedView displays thumbnails in one of three supported layouts: 
 
 - Vertical
 - Horizontal
 - Grid
 
-Here is an example of VideoFeedFragment that you can modify according to your needs and add to view hierarchy. 
+Here is an example of VideoFeedView that you can modify according to your needs and add to view hierarchy. 
 
-			<fragment android:id="@+id/{your_fragment_id}"
+			<com.loopnow.fireworklibrary.VideoFeedView android:id="@+id/{your_fragment_id}"
 	   			android:name="com.loopnow.fireworklibrary.views.VideoFeedFragment"
 	   			android:layout_width="{your_fragment_width}"
 	   			android:layout_height="{your_fragment_height}"
 	   			app:showTitle="{true / false}"
-	   			app:appid="{your_app_id}"
 	   			app:feedLayout="{grid | horizontal | vertical}"
 	  			app:columns="{number_of_columns_if_your_feedLayout_is_grid}"
 	   			app:textStyle="@style/{your_text_style_for_video_title}" 
            			app:imageStyle="@style/{your_image_style_for_video_thumbnail}">
-			</fragment>
+			/>
 			
 			
 - {your_fragment_id} : Optional fragment id.    
@@ -132,9 +150,7 @@ We recommend using layout_height="match_parent" when feedLayout is specified as 
 		  layout_height="0dp" 
 		  app:layout_constraintHeight_default="percent"
               app:layout_constraintHeight_percent="0.40"
-		
-- app:appid: This refers to app_id you received at the time of registering your application with Firework platform. FireworkSDK will throw exception in the absense of app_id. It is a must attribute. Please contact Firework, if you don't already have one. 
-
+		 
 3. app:columns: This is an optional attribute and is only relevant if feedLayout is grid. It has default value of 2. 
 
 4. app:showTitle={true|false} : This is an optional attribute. It can be either true or false. The default value is false. When true, video title is displayed. The position of the title is controlled by the attribute ```app:titlePosition```. The text style applied to title, can be specified with optional attribute ```app:textStyle```. 
