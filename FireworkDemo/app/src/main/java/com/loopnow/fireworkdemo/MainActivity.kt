@@ -42,11 +42,9 @@ class MainActivity : AppCompatActivity() {
 
         FireworkSDK.addOnItemClickListener(object: VideoFeedAdapter.OnItemClickListener {
             override fun onItemClicked(position: Int) {
-                //Log.v("UiLog", "onItemClicked : $position " )
             }
 
             override fun onItemClicked(title: String, id: String, duration: Float) {
-               // Log.v("UiLog", " onItemClicked :  $title :   $id :  $duration")
             }
         })
 
@@ -67,6 +65,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
+/*
+    // use of VideoFeedFragment is deprecated
     val attachedFragmentSet = HashSet<Fragment>()
     // We are keeping the track of all the fragments that are created in FireworkSDK
     override fun onAttachFragment(fragment: Fragment) {
@@ -87,4 +89,6 @@ class MainActivity : AppCompatActivity() {
         attachedFragmentSet.clear()
         super.onSaveInstanceState(outState)
     }
+    */
+
 }
