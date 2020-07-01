@@ -1,17 +1,18 @@
 package com.loopnow.fireworkdemo.ui.main
 
 
-import android.arch.lifecycle.Observer
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.support.v4.app.Fragment
-import android.arch.lifecycle.ViewModelProviders
-import android.support.v7.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.loopnow.fireworkdemo.R
 import com.loopnow.fireworkdemo.adapters.IntegratedAdapter
-import com.loopnow.fireworklibrary.FireworkSDK.Companion.debug
 import kotlinx.android.synthetic.main.fragment_integrated.*
 
 /**
@@ -54,13 +55,13 @@ open class IntegratedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setRecyclerView(view)
-
     }
 
     open fun setRecyclerView(view: View) {
-        recycler_view.layoutManager = LinearLayoutManager(view.context)
-        recycler_view.setHasFixedSize(true)
-        recycler_view.adapter = adapter
+        val rc = view.findViewById<RecyclerView>(R.id.recycler_view)
+        rc.layoutManager = LinearLayoutManager(view.context)
+        rc.setHasFixedSize(true)
+        rc.adapter = adapter
     }
 
     companion object {

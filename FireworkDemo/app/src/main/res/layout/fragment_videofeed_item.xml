@@ -13,7 +13,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHeight_default="percent"
             app:feedLayout="horizontal"
-            app:appid="BQEaIb9E80fiqAyaNQ5uv5_II5lXL3ET"
             android:id="@+id/integrated_videofeed"
             android:tag="integrated_fragment"
 

@@ -1,20 +1,19 @@
 package com.loopnow.fireworkdemo.ui.main
 
-import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.os.Handler
-import android.support.v4.app.Fragment
-import android.support.v4.view.ViewPager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.viewpager.widget.ViewPager
 import com.loopnow.fireworkdemo.R
 import com.loopnow.fireworkdemo.adapters.PlaybackViewAdapter
 import com.loopnow.fireworklibrary.FeedResult
 import com.loopnow.fireworklibrary.FireworkInitStatusListener
 import com.loopnow.fireworklibrary.FireworkSDK
-import com.loopnow.fireworklibrary.FireworkSDK.Companion.debug
 import kotlinx.android.synthetic.main.fragment_videoview.*
 
 class VideoViewFragment  : Fragment() {
@@ -23,6 +22,11 @@ class VideoViewFragment  : Fragment() {
    // val appid = "TIjq0YITcyqaz_zicjWpkx95gz_HAkzl"
     val appid = "qqDNva8NF8b0cM76prmEpHsm_PRko9WM"
     val bundle_id = "com.app.itap"
+
+    private var viewPager: ViewPager? = null
+
+
+    var rootView: View? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,7 +55,12 @@ class VideoViewFragment  : Fragment() {
                     }
                 })
 
-        return  inflater.inflate(R.layout.fragment_videoview, container, false)
+        rootView =   inflater.inflate(R.layout.fragment_videoview, container, false)
+        rootView?.apply {
+            viewPager = findViewById(R.id.videoview_viewpager)
+        }
+
+        return rootView
     }
 
 
@@ -72,10 +81,10 @@ class VideoViewFragment  : Fragment() {
     }
 
     private fun setUI() {
-        videoview_viewpager.adapter = adapter
-        videoview_viewpager.offscreenPageLimit = 2
+        viewPager?.adapter = adapter
+        viewPager?.offscreenPageLimit = 2
 
-        videoview_viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        viewPager?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(p0: Int) {
             }
 
@@ -95,7 +104,6 @@ class VideoViewFragment  : Fragment() {
      }
 
     fun resumePlayback() {
-        Log.v("SdkLog", " Adpter current video ${adapter.currentVideo}" )
         if(adapter.videoList.size > adapter.currentVideo && adapter.currentVideo >= 0 ) {
             fireworkSDK.nowPlayingVideo(adapter.currentVideo, adapter.videoList[adapter.currentVideo])
         }

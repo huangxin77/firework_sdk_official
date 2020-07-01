@@ -2,13 +2,12 @@ package com.loopnow.fireworkdemo.ui.main
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import com.loopnow.fireworkdemo.R
 import com.loopnow.fireworklibrary.Key
 import com.loopnow.fireworklibrary.views.FireworkPlayerFragment
-import com.loopnow.fireworklibrary.views.VideoFragment
 
 private val TAB_TITLES = arrayOf(
         R.string.integrated,
@@ -124,6 +123,8 @@ class SectionsPagerAdapter(private val context: Context, val fm: FragmentManager
     }
 
     override fun getCount(): Int {
+        //return 2
         return TAB_TITLES.size
+       // return  1
     }
 }

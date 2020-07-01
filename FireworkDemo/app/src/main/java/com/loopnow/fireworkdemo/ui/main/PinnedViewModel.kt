@@ -1,6 +1,6 @@
 package com.loopnow.fireworkdemo.ui.main
 
-import android.support.annotation.WorkerThread
+import androidx.annotation.WorkerThread
 import com.loopnow.fireworkdemo.R
 import com.loopnow.fireworkdemo.models.Content
 import com.loopnow.fireworkdemo.models.DemoContent

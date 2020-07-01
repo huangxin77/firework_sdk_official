@@ -1,20 +1,25 @@
 package com.loopnow.fireworkdemo
 
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
-import android.support.design.widget.TabLayout
-import android.support.v4.view.ViewPager
-import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
+import android.os.PersistableBundle
+import android.util.Log
+
+
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 import com.loopnow.fireworkdemo.ui.main.SectionsPagerAdapter
+import com.loopnow.fireworklibrary.FireworkSDK
+import com.loopnow.fireworklibrary.adapters.VideoFeedAdapter
+import com.loopnow.fireworklibrary.views.VideoFeedFragment
+import com.loopnow.fireworklibrary.views.VideoViewFragment
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        super.onCreate(null)
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         val viewPager: ViewPager = findViewById(R.id.view_pager)
@@ -35,5 +40,51 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        FireworkSDK.addOnItemClickListener(object: VideoFeedAdapter.OnItemClickListener {
+            override fun onItemClicked(position: Int) {
+                //Log.v("UiLog", "onItemClicked : $position " )
+            }
+
+            override fun onItemClicked(title: String, id: String, duration: Float) {
+               // Log.v("UiLog", " onItemClicked :  $title :   $id :  $duration")
+            }
+        })
+
+        FireworkSDK.addVideoPlaybackTracker(object: FireworkSDK.VideoPlaybackTracker {
+            override fun videoWatched(title: String, id: String, duration: Float) {
+            }
+
+            override fun nowPlaying(title: String, id: String, duration: Float) {
+            }
+
+        })
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        FireworkSDK.addOnItemClickListener(null)
+
+    }
+
+    val attachedFragmentSet = HashSet<Fragment>()
+    // We are keeping the track of all the fragments that are created in FireworkSDK
+    override fun onAttachFragment(fragment: Fragment) {
+        when(fragment) {
+            is VideoFeedFragment, is VideoViewFragment -> {
+                attachedFragmentSet.add(fragment)
+            }
+        }
+        super.onAttachFragment(fragment)
+    }
+
+
+    // We are removing and detaching all the FireworkSDK related fragments
+    override fun onSaveInstanceState(outState: Bundle) {
+        for(fragment in attachedFragmentSet) {
+            supportFragmentManager.beginTransaction().remove(fragment).detach(fragment).commitNowAllowingStateLoss()
+        }
+        attachedFragmentSet.clear()
+        super.onSaveInstanceState(outState)
     }
 }

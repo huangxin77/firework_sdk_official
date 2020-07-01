@@ -1,12 +1,13 @@
 package com.loopnow.fireworkdemo.ui.main
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.loopnow.fireworkdemo.R
 import com.loopnow.fireworklibrary.FireworkSDK.Companion.debug
 import kotlinx.android.synthetic.main.fragment_pinned.*
@@ -34,9 +35,10 @@ class PinnedFragment  : IntegratedFragment() {
 
 
    override fun setRecyclerView(view: View ) {
-        pinned_recycler_view.layoutManager = LinearLayoutManager(view.context)
-        pinned_recycler_view.setHasFixedSize(true)
-        pinned_recycler_view.adapter = adapter
+       val rc = view.findViewById<RecyclerView>(R.id.pinned_recycler_view)
+       rc.layoutManager = LinearLayoutManager(view.context)
+       rc.setHasFixedSize(true)
+       rc.adapter = adapter
     }
     companion object {
 

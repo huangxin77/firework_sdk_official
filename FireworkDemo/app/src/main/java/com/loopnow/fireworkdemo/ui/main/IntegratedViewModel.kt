@@ -1,11 +1,10 @@
 package com.loopnow.fireworkdemo.ui.main
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.Transformations
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
-import android.support.annotation.WorkerThread
+
+import androidx.annotation.WorkerThread
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.loopnow.fireworkdemo.R
 import com.loopnow.fireworkdemo.models.Content
 import com.loopnow.fireworkdemo.models.DemoContent
@@ -28,11 +27,19 @@ open class IntegratedViewModel : ViewModel() {
         val contentFeed = ArrayList<DemoContent>()
 
 
+        /*contentFeed.add(VideoFeed(keywords[1], R.layout.videofeed_item))
+        contentFeed.add(VideoFeed(keywords[2], R.layout.videofeed_item))
+*/
+
         for(i in 0 until Math.min(imageUrls.size,textContent.size) -1 ) {
 
             contentFeed.add( Content(imageUrls[i], textContent[i], R.layout.content_item))
 
             if(i == 1 ) {
+                contentFeed.add(VideoFeed(keywords[i], R.layout.videofeed_item))
+            }
+
+            if(i == 3 ) {
                 contentFeed.add(VideoFeed(keywords[i], R.layout.videofeed_item))
             }
 

@@ -5,7 +5,6 @@ package com.loopnow.fireworkdemo.adapters
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
 
-import android.support.v4.view.PagerAdapter
 import android.view.View
 
 import com.loopnow.fireworklibrary.Video
@@ -14,6 +13,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 import android.view.ViewGroup
 import android.view.LayoutInflater
+import androidx.viewpager.widget.PagerAdapter
 import com.loopnow.fireworkdemo.R
 import com.loopnow.fireworklibrary.FireworkSDK
 import com.loopnow.fireworklibrary.FireworkSDK.Companion.debug
@@ -46,7 +46,7 @@ class PlaybackViewAdapter(val context: Context, val sdk: FireworkSDK) : PagerAda
         val videoView = if(layout.childCount > 0) layout.getChildAt(0) as VideoView else null
 
         videoView?.apply {
-            setVideo(video, sdk)
+            setVideo(position,video, sdk)
         } ?: run {
         }
         collection.addView(layout)

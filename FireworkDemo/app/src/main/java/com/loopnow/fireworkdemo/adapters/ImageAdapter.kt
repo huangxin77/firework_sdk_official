@@ -1,7 +1,7 @@
 package com.loopnow.fireworkdemo.adapters
 
-import android.databinding.BindingAdapter
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import com.squareup.picasso.Picasso
 
 object ImageAdapter {
