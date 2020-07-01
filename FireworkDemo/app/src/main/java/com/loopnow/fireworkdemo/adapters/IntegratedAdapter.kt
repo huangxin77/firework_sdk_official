@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.loopnow.fireworkdemo.R
 import com.loopnow.fireworkdemo.databinding.ContentItemBinding
-import com.loopnow.fireworkdemo.databinding.VideofeedItem1Binding
 import com.loopnow.fireworkdemo.models.Content
 import com.loopnow.fireworkdemo.models.DemoContent
 import kotlinx.android.synthetic.main.videofeed_item.view.*
@@ -54,7 +53,6 @@ class IntegratedAdapter(val supportFragmentManager: FragmentManager) : RecyclerV
 
     internal class ContentItemViewHolder(val binding: ContentItemBinding) : RecyclerView.ViewHolder(binding.root)
     internal class VideofeedItemViewHolder(val view: View) : RecyclerView.ViewHolder(view)
-    internal class VideofeedItemViewHolder1(val binding: VideofeedItem1Binding) : RecyclerView.ViewHolder(binding.root)
 
 
 
