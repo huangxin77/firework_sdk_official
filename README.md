@@ -15,8 +15,8 @@ The app_id is used to authenticate your application with the server. Authenticat
 ### How to add library to your project? 
 
 The latest SDK version  is [![](https://jitpack.io/v/loopsocial/firework_sdk.svg)](https://jitpack.io/#loopsocial/firework_sdk)
-	-[X] ExoPlayer v2.11.3
-	-[X] Uses AndroidX libraries
+	- [X] ExoPlayer v2.11.3
+	- [X] Uses AndroidX libraries
 
 
 - [X] In AndroidManifest.xml, add 
