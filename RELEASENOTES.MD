@@ -15,10 +15,12 @@
 
 ### 3.0.2 (2020-06-24) ###
 
-* Improved Tracking
-* Deprecated VideoFeedFragment and added VideoFeedView
-*   Libraries 
-    
+* What's new? 
+  
+    * Improved Tracking
+    * Deprecated VideoFeedFragment and added VideoFeedView
+
+*   Libraries     
     * Exoplayer v2.11.3
     * AndroidX 
 
