@@ -17,4 +17,8 @@
 
 * Improved Tracking
 * Deprecated VideoFeedFragment and added VideoFeedView
+*   Libraries 
+    
+    * Exoplayer v2.11.3
+    * AndroidX 
 
