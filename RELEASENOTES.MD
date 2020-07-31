@@ -3,7 +3,7 @@
 ### v4.0.0 (2020-07-29) ###
 
 *   Admob Ads: Added Admob native ads and Admob banner ads support. 
-    you can configure the the type of admob adds you want to display during video playback
+    you can configure the the type of admob ads you want to display during video playback
     
     * Native ads: Native ads are displayed after user watches `n` videos. You can configure `n`
     * Banner ads: Banner ads are displayed on top of video player after usear watches video for `n` loops. You can configure `n`. 
