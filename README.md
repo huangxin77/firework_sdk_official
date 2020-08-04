@@ -56,7 +56,10 @@ https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
 			------ other dependencies 
 			------ 
 			------
-			implementation 'com.github.loopsocial:firework_sdk:{latest_version_displayed_in_green}' 
+			implementation 'com.github.loopsocial:firework_sdk:{latest_version}' 
+			
+			// Refer to https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
+
 		}
 
 		android {
