@@ -1,6 +1,6 @@
 # Release notes #
 
-## v4.0.0 (2020-07-29) ##
+## v4.0.0 (2020-07-29) Recommended ##
 
 *   Admob Ads: Added Admob native ads and Admob banner ads support. 
     you can configure the the type of admob ads you want to display during video playback
