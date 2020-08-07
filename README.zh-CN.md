@@ -5,13 +5,19 @@ FireworkSDK 是一個應用庫用於整合Firework短視頻於您的Android應�
 ### FireworkSDK Demo 
 https://github.com/loopsocial/firework_sdk_official/blob/master/FireworkDemo.apk
 
-### Prerequisites 
+### 前置需求
 To integrate FireworkSDK into your applicaiton, you have to register your application with Firework platform and get unique
 app_id.
+在您開始整合FireworkSDK至您的應用程式前，你必須先向Firework註冊，取得您的專屬app_id。
+
 - [X] Provide your application's applicationId / package name to the business team / engineering team you are co-ordinating with. If your applicationId is different from package name, provide applicationId.
+- [X] 提供您Android專案的applicationId或專案名稱給Firework團隊。如果您的applicationId和專案名稱是不同的，請以applicationId為主。
+
 - [X] We will email you the app_id.
+- [X] Firework團隊將會發送您的app_id.
 
 The app_id is used to authenticate your application with the server. Authentication will fail if your application's applicationId / package name is different from what you provided, or you use wrong app_id. 
+此app_id將用於您的應用程式
  
 ### How to add library to your project? 
 
