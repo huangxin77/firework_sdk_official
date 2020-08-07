@@ -118,19 +118,17 @@ FireworkSDK 是一個用於整合Firework短視頻於您的Android應用程式�
 
 - app:feedLayout={grid | horizontal | vertical} : 定義縮圖顯示的樣示。支援的參數如下
 		
-1. grid: 影片縮圖將以 ```<欄> x <列>``` 的格式顯示，支援垂直捲動。如果沒有指定```app:columns```，預設值為2。		
-<img src="screenshots/grid.jpg"  width="270" height="480"> <img src="screenshots/grid_with_title.jpg"  width="270" height="480">
+  1. grid: 影片縮圖將以 ```<欄> x <列>``` 的格式顯示，支援垂直捲動。如果沒有指定```app:columns```，預設值為2。		
+ 	<img src="screenshots/grid.jpg"  width="270" height="480"> <img src="screenshots/grid_with_title.jpg"  width="270" height="480">
 			
 			
-2. horizontal: 影片縮圖將以水平方式顯示，支援水平捲動。
-		  
-<img src="screenshots/Horizontal_video_list.png"  width="270" height="480">
+  2. horizontal: 影片縮圖將以水平方式顯示，支援水平捲動。		  
+ 	<img src="screenshots/Horizontal_video_list.png"  width="270" height="480">
 	
-3. vertical : 影片縮圖將以垂直方式顯示，支援垂直捲動。
-		
-<img src="screenshots/vertical.jpg"  width="270" height="480"> <img src="screenshots/vertical_with_title.jpg"  width="270" height="480">
+  3. vertical : 影片縮圖將以垂直方式顯示，支援垂直捲動。
+	<img src="screenshots/vertical.jpg"  width="270" height="480"> <img src="screenshots/vertical_with_title.jpg"  width="270" height="480">
 	
-若您選擇vertical或grid模式,建議使用 layout_height="match_parent"。反之，若是horizontal模式，則提供%或dp。
+     若您選擇vertical或grid模式,建議使用 layout_height="match_parent"。反之，若是horizontal模式，則提供%或dp。
 	       
 	       如下: 
 	       
@@ -146,9 +144,11 @@ FireworkSDK 是一個用於整合Firework短視頻於您的Android應用程式�
 		  app:layout_constraintHeight_default="percent"
                   app:layout_constraintHeight_percent="0.40"
 		 
-3. app:columns: 此屬性只有在使用grid配置時才有作用，預設值為2。
+ - app:columns: 此屬性只有在使用grid配置時才有作用，預設值為2。
 
-4. app:showTitle={true|false} : 此為非必要屬性，用於顯示影片標題於縮圖上，可根據您的需求選擇開啟標題(true)或關閉標題(false)。
+ - app:showTitle={true|false} : 此為非必要屬性，用於顯示影片標題於縮圖上，可根據您的需求選擇開啟標題(true)或關閉標題(false)。
+
+
 
 
 
