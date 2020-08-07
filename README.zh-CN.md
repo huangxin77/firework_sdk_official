@@ -1,55 +1,46 @@
 ### FireworkSDK
-FireworkSDK is a library to integrate video feeds from ```Firework - a short form video platform``` into your Android application. 
-FireworkSDK 是一個應用庫用於整合Firework短視頻於您的Android應用程式。
+FireworkSDK 是一個用於整合Firework短視頻於您的Android應用程式的應用庫。
 
-### FireworkSDK Demo 
-https://github.com/loopsocial/firework_sdk_official/blob/master/FireworkDemo.apk
+### FireworkSDK 範例展示
+下載連結: https://github.com/loopsocial/firework_sdk_official/blob/master/FireworkDemo.apk
 
 ### 前置需求
-To integrate FireworkSDK into your applicaiton, you have to register your application with Firework platform and get unique
-app_id.
-在您開始整合FireworkSDK至您的應用程式前，你必須先向Firework註冊，取得您的專屬app_id。
+在您開始整合FireworkSDK至您的應用程式前，你必須先向Firework團隊註冊的應用程式，以取得您的專屬app_id。步驟如下:
 
-- [X] Provide your application's applicationId / package name to the business team / engineering team you are co-ordinating with. If your applicationId is different from package name, provide applicationId.
 - [X] 提供您Android專案的applicationId或專案名稱給Firework團隊。如果您的applicationId和專案名稱是不同的，請以applicationId為主。
 
-- [X] We will email you the app_id.
-- [X] Firework團隊將會發送您的app_id.
+- [X] Firework團隊在收到您的申請需求後，將會發送一組您的app_id.
 
-The app_id is used to authenticate your application with the server. Authentication will fail if your application's applicationId / package name is different from what you provided, or you use wrong app_id. 
-此app_id將用於您的應用程式
+[註]∶ 此app_id將用於您的應用程式與後台之間的認證，如果您直接套用於非註冊的applicationId或專案名稱，此app_id將無法正常運作。
  
-### How to add library to your project? 
 
-https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
+### 如何套用至您的專案? 
 
-
-
-- [X] In AndroidManifest.xml, add 
-
+版本通知 https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
+ 
+- [X] 新增如下(1) - (5)於AndroidManifest.xml  
 		<application>	
 		....
 		....
 		
-			// Activity needed for video playback when.
+			//(1) 新增播放頁面的 Activity
 		 	<activity android:name="com.loopnow.fireworklibrary.PlaybackActivity"
 		 		android:screenOrientation="portrait"
 		 		android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
 		 	/>
 			
-			// Activity needed for starting a web browser , when CTA on the advertisement is clicked. 
+			//(2) 新增開啟廣告頁面的web Activity 
 			<activity android:name="com.loopnow.fireworklibrary.views.FireworkWebClientActivity"
             			android:theme="@style/AppTheme.NoActionBar.FullScreen"
             		/>
 			
-			// Service used for prefetching of next video , if all data for currently playing video is fetched. 
+			//(3) 用於預存影片的Service 
         		<service android:name="com.loopnow.fireworklibrary.views.CacheService" />
 
-        		// Instead of providing app_id in VideoFeedFragment xml , you can specify it in AndroidManifest.xml
+			//(4) 新增您的Firework app_id
 			<meta-data android:name="Firework:AppID" android:value="{app_id provided to you}" />
         
-			// We plan on using advertising_id to improve target ads so that you can monetize better. 
-			// This is needed for to get advertising id using Android ad sdk.  
+			//(5) 為了優化您在廣告項目上的內容及營利，將需此設定取得您應用程試的advertising_id。
 			<meta-data
             			android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             			android:value="true"/>
@@ -57,7 +48,7 @@ https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
 	    
 		</application>
     
-- [X] In your application's build.gradle, add 
+- [X] 新增FireworkSDK至應用程式的主要build.gradle
 
 		dependencies {
 			------ other dependencies 
@@ -65,7 +56,7 @@ https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
 			------
 			implementation 'com.github.loopsocial:firework_sdk:{latest_version}' 
 			
-			// Refer to https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
+			//版本號參照 to https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
 
 		}
 
@@ -83,8 +74,7 @@ https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
 	     		}
 		}
 	
-- [X] In your project's build.gradle, add 
-	
+- [X] 新增jitpack.io至app的build.gradle
 	
 		allprojects {
 			repositories {
@@ -96,60 +86,53 @@ https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
 			}
 		}
 	
-- [X] In proguard-rules.pro, add 
+- [X] 新增如下代碼於 proguard-rules.pro 
 		
 		-keepclassmembers class com.loopnow.fireworklibrary.** { <fields>; }
 
 
+  
+### 整合影片UI至您應用程式 
 
-### Integrating video feed in your application.  
+您有兩種方式可以整合Firework video到應用程式
 
-There are two ways of integrating Firework video feed in your application. 
+1. VideoFeedView: 提供影片縮圖清單，將影片清單以view的方式整合至您的layout，並且透過點選縮圖後您可以開始播放器觀賞影片。VideoFeedView提供三種配置:
 
+- 垂直 vertical
+- 水平 horizontal
+- 網格 grid
 
-1. VideoFeedView: If you want to display video thumbnails and start playing the video only after user clicks on one of them, then dropping custom view, VideoFeedView into your view hierarchy is the easiest and quickest way to integrate firework video feed into your app. VideoFeedView displays thumbnails in one of three supported layouts: 
+依據您的需求，可參照以下VideoFeedView範例在layout中做調整: 
 
-- Vertical
-- Horizontal
-- Grid
-
-Here is an example of VideoFeedView that you can modify according to your needs and add to view hierarchy. 
-
-			<com.loopnow.fireworklibrary.VideoFeedView android:id="@+id/{your_fragment_id}"
+			<com.loopnow.fireworklibrary.VideoFeedView
 	   			android:name="com.loopnow.fireworklibrary.views.VideoFeedFragment"
-	   			android:layout_width="{your_fragment_width}"
-	   			android:layout_height="{your_fragment_height}"
+	   			android:layout_width="{寬}"
+	   			android:layout_height="{高}"
 	   			app:showTitle="{true / false}"
 	   			app:feedLayout="{grid | horizontal | vertical}"
-	  			app:columns="{number_of_columns_if_your_feedLayout_is_grid}"
-	   			app:textStyle="@style/{your_text_style_for_video_title}" 
-           			app:imageStyle="@style/{your_image_style_for_video_thumbnail}">
+	  			app:columns="{如果使用grid，加入所需列數}">
 			/>
 			
-			
-- {your_fragment_id} : Optional fragment id.    
-- {your_fragment_width} : Specify the basic width of the view, this is required attribute. 
-- {your_fragment_height} : Specify the basic height of the view, this is required attribute. 
+- {寬} : 必須定義所需VideoFeedView的寬。
+- {高} : 必須定義所需VideoFeedView的高。
 
-- app:feedLayout={grid | horizontal | vertical} : This attribute specifies the layout for displaying thumbnails. The possible values are 
+- app:feedLayout={grid | horizontal | vertical} : 定義縮圖顯示的樣示。支援的參數如下
 		
-1. Grid: Will layout video feed in a multiple ```rows> x <columns>``` format. 
-It will scroll vertically. If optional attribute ```app:columns``` is not specified, the default columm number defaults to 2. 	
-		
+1. grid: 影片縮圖將以 ```<欄> x <列>``` 的格式顯示，支援垂直捲動。如果沒有指定```app:columns```，預設值為2。		
 <img src="screenshots/grid.jpg"  width="270" height="480"> <img src="screenshots/grid_with_title.jpg"  width="270" height="480">
 			
 			
-2. horizontal: Will layout video feed as a single row and will function as a horizontal scrollable view.
+2. horizontal: 影片縮圖將以水平方式顯示，支援水平捲動。
 		  
 <img src="screenshots/Horizontal_video_list.png"  width="270" height="480">
 	
-3. vertical : Will layout video feed as a single column and will function as a vertical scrollable view.
+3. vertical : 影片縮圖將以垂直方式顯示，支援垂直捲動。
 		
 <img src="screenshots/vertical.jpg"  width="270" height="480"> <img src="screenshots/vertical_with_title.jpg"  width="270" height="480">
 	
-We recommend using layout_height="match_parent" when feedLayout is specified as either Vertical or Grid and 		  using definite height defined either as % of the parent viewgroup's height or specified in terms of dp when 		       feedLayout is horizontal 
+若您選擇vertical或grid模式,建議使用 layout_height="match_parent"。反之，若是horizontal模式，則提供%或dp。
 	       
-	       e.g 
+	       如下: 
 	       
 	       1. feedLayout="vertical" or feedLaout="grid"
 	          layout_height="match_parent"
@@ -157,68 +140,21 @@ We recommend using layout_height="match_parent" when feedLayout is specified as 
 	       2. feedLayout="horizontal" 
 	       	  layout_height="200dp" 
 		  
-		  or if you are using ConstraintLayout
+		  or 如果使用 ConstraintLayout
 		  
 		  layout_height="0dp" 
 		  app:layout_constraintHeight_default="percent"
-              app:layout_constraintHeight_percent="0.40"
+                  app:layout_constraintHeight_percent="0.40"
 		 
-3. app:columns: This is an optional attribute and is only relevant if feedLayout is grid. It has default value of 2. 
+3. app:columns: 此屬性只有在使用grid配置時才有作用，預設值為2。
 
-4. app:showTitle={true|false} : This is an optional attribute. It can be either true or false. The default value is false. When true, video title is displayed. The position of the title is controlled by the attribute ```app:titlePosition```. The text style applied to title, can be specified with optional attribute ```app:textStyle```. 
-
-5. app:textStyle: This is an optional attribute and when specified the style is applied to TextView displaying video title. If textStyle is not specified default style is applied. Below is the example of TextStyle usage. 
-	
-	```app:textStyle="@style/VideoTitleStyle"```
-
-	<style name="VideoTitleStyle">
-        	<item name="android:textColor">#ff4a4a4a</item>
-        	<item name="android:textSize">14dp</item>
-        	<item name="android:lines">2</item>
-	        <item name="android:maxLines">2</item>
-        	<item name="android:gravity">left</item>
-        	<item name="android:layout_width">match_parent</item>
-        	<item name="android:fontFamily">@font/squeakychalk</item>
-   	</style>
-  
-
-6. app:titlePosition={alignBottom:below}: When attribute showTitle is set to true, then app:titlePosition="alignBottom" will align the bottom of TextView displaying title to the bottom of the thumbnail and app:titlePosition="below" will align the top of the TextView displaying title to the bottom of the thumbnail. 
+4. app:showTitle={true|false} : 此為非必要屬性，用於顯示影片標題於縮圖上，可根據您的需求選擇開啟標題(true)或關閉標題(false)。
 
 
-6. imageStyle: An optional attribute that can be used to define corner radius of the image. At present, only radius is supported. 
-
-```app:imageStyle="@style/ThumbnailStyle"```
-
-	<style name="ImageStyle" >
-	       <item name="android:radius">12dp</item>
-	</style>
-	
-7. app:gutterSpace: When you use layout="grid", gutterSpace is the space between two consecutive columns & rows. By default it is 8dp but you can customize it. 
-
-		<fragment android:id="@+id/video_fragment"
-                  	android:name="com.loopnow.fireworklibrary.views.VideoFeedFragment"
-                  
-                  	app:gutterSpace="8dp"
-			app:gutterSpace="{your_desired_value}"
-        		/>
-
-
-8. app:itemLayout: In VideoFeedFragment, you can overwrite the default layout used for the feed items. Use attribute itemLayout to provide custom layout. 
-
-		<fragment android:id="@+id/video_fragment"
-                  	android:name="com.loopnow.fireworklibrary.views.VideoFeedFragment"
-                  	app:itemLayout="@layout/{your_custom_layout}
-        		/>
-When you provide your custom layout, it is must that the layout includes TextView with id caption and ImageView with id thumbnail. 
-
-Please refer to source code layout/fragment_grid.xml to know more about using VideoFeedFragment.  
-
-9. app:enableShare={true|false} : if you specify enableShare=true , then sharing of the video is enabled. Share icon is placed at the right|bottom. By default enableShare is true and you can disable it by setting enableShare=false
-	
 
 2. FireworkPlayerFragment : 
 
-The first approach using VideoFeedFragment displays video thumbnails and plays video once user clicks on one of the thumbnails but if you don't want to display thumbnails and start auto-playing the video, you should drop FireworkPlayerFragment into your view hierarchy. User can swipe right to go to next video and swipe left to go to previous video. 
+如果您不需要影片清單，只需要播放器全屏播放影片，讓用戶端可以直接透過左划或右划的手勢瀏覽影片。您可以選擇以FireworkPlayerFragment的方式，直接整合影片播放器至您的應用程式。
 
 		<fragment android:layout_width="match_parent"
             		android:layout_height="match_parent"
@@ -227,12 +163,3 @@ The first approach using VideoFeedFragment displays video thumbnails and plays v
             		android:id="@+id/{your_fragment_id}"
             		android:tag="player_fragment"
            		/>
-
-
-
-### Pagination
-VideoFeedFragment as well as FireworkPlayerFragment will progressively load small chunk of data as user scrolls the feed ensuring optimized use of network bandwidth.  
-
-
-### Video Playback
-When user clicks on one of the thumbnails from the video feed integrated in your application, FireworkSDK handles the onClick event and starts the video playback. If you have not already added PlaybackActivity to your AndroidManifest file, you should. The application will crash without it. 
