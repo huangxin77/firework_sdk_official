@@ -126,6 +126,7 @@ FireworkSDK 是一個用於整合Firework短視頻於您的Android應用程式�
  	<img src="screenshots/Horizontal_video_list.png"  width="270" height="480">
 	
   3. vertical : 影片縮圖將以垂直方式顯示，支援垂直捲動。
+  
 	<img src="screenshots/vertical.jpg"  width="270" height="480"> <img src="screenshots/vertical_with_title.jpg"  width="270" height="480">
 	
      若您選擇vertical或grid模式,建議使用 layout_height="match_parent"。反之，若是horizontal模式，則提供%或dp。
