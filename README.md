@@ -108,21 +108,22 @@ There are two ways of integrating Firework video feed in your application.
 
 Here is an example of VideoFeedView that you can modify according to your needs and add to view hierarchy. 
 
-			<com.loopnow.fireworklibrary.VideoFeedView android:id="@+id/{your_fragment_id}"
+			<com.loopnow.fireworklibrary.VideoFeedView 
 	   			android:name="com.loopnow.fireworklibrary.views.VideoFeedFragment"
-	   			android:layout_width="{your_fragment_width}"
-	   			android:layout_height="{your_fragment_height}"
-	   			app:showTitle="{true / false}"
+	   			android:layout_width="{desired_width}"
+	   			android:layout_height="{desired_height}"
+	   			app:showTitle="{true or false}"
 	   			app:feedLayout="{grid | horizontal | vertical}"
-	  			app:columns="{number_of_columns_if_your_feedLayout_is_grid}"
-	   			app:textStyle="@style/{your_text_style_for_video_title}" 
-           			app:imageStyle="@style/{your_image_style_for_video_thumbnail}">
-			/>
+	  			app:columns="{number_of_columns_if_your_feedLayout_is_grid, default value is 2}"
+	   		
+			/> 
 			
 			
-- {your_fragment_id} : Optional fragment id.    
-- {your_fragment_width} : Specify the basic width of the view, this is required attribute. 
-- {your_fragment_height} : Specify the basic height of the view, this is required attribute. 
+  <-- app:textStyle="@style/{your_text_style_for_video_title}" 
+           			app:imageStyle="@style/{your_image_style_for_video_thumbnail}"> -->
+				
+- {desired_width} : Specify the basic width of the view, this is required attribute. 
+- {desired_height} : Specify the basic height of the view, this is required attribute. 
 
 - app:feedLayout={grid | horizontal | vertical} : This attribute specifies the layout for displaying thumbnails. The possible values are 
 		
