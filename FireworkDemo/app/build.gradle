@@ -102,15 +102,15 @@ dependencies {
     //kapt 'com.github.bumptech.glide:compiler:4.4.0'
 
 
-    implementation 'com.github.loopsocial:firework_sdk:v2.2.80x'
+   // implementation 'com.github.loopsocial:firework_sdk:v2.2.80x'
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
 
 
-    /*implementation project(path: ':fireworklibrary')
+    implementation project(path: ':fireworklibrary')
 
     implementation fileTree(include: ['*.aar'], dir: 'libs')
-*/
+
     implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
