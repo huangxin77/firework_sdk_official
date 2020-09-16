@@ -13,10 +13,14 @@
     * Exoplayer v2.11.3
     * AndroidX 
     
-## v4.0.3 - variant of v4.0.0 ##
+## v4.0.4 - variant of v4.0.0 ##
 
    * With Exoplayer r2.2.2 instead of v2.11.3, appropriate if you are already using Exoplayer r2.2.2 in your application. 
     
+
+## v4.0.5 - variant of v4.0.0 ##
+    
+    * with Exoplayer v2.11.7 
 
 ## v3.0.2 (2020-06-24) ##
 
