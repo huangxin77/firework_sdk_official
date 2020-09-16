@@ -14,10 +14,8 @@ The app_id is used to authenticate your application with the server. Authenticat
  
 ### How to add library to your project? 
 
-The latest SDK version  is [![](https://jitpack.io/v/loopsocial/firework_sdk.svg)](https://jitpack.io/#loopsocial/firework_sdk)
+https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
 
-- [X] ExoPlayer v2.11.3
-- [X] Uses AndroidX libraries
 
 
 - [X] In AndroidManifest.xml, add 
@@ -58,7 +56,10 @@ The latest SDK version  is [![](https://jitpack.io/v/loopsocial/firework_sdk.svg
 			------ other dependencies 
 			------ 
 			------
-			implementation 'com.github.loopsocial:firework_sdk:{latest_version_displayed_in_green}' 
+			implementation 'com.github.loopsocial:firework_sdk:{latest_version}' 
+			
+			// Refer to https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
+
 		}
 
 		android {
@@ -107,21 +108,22 @@ There are two ways of integrating Firework video feed in your application.
 
 Here is an example of VideoFeedView that you can modify according to your needs and add to view hierarchy. 
 
-			<com.loopnow.fireworklibrary.VideoFeedView android:id="@+id/{your_fragment_id}"
+			<com.loopnow.fireworklibrary.VideoFeedView 
 	   			android:name="com.loopnow.fireworklibrary.views.VideoFeedFragment"
-	   			android:layout_width="{your_fragment_width}"
-	   			android:layout_height="{your_fragment_height}"
-	   			app:showTitle="{true / false}"
+	   			android:layout_width="{desired_width}"
+	   			android:layout_height="{desired_height}"
+	   			app:showTitle="{true or false}"
 	   			app:feedLayout="{grid | horizontal | vertical}"
-	  			app:columns="{number_of_columns_if_your_feedLayout_is_grid}"
-	   			app:textStyle="@style/{your_text_style_for_video_title}" 
-           			app:imageStyle="@style/{your_image_style_for_video_thumbnail}">
-			/>
+	  			app:columns="{number_of_columns_if_your_feedLayout_is_grid, default value is 2}"
+	   		
+			/> 
 			
 			
-- {your_fragment_id} : Optional fragment id.    
-- {your_fragment_width} : Specify the basic width of the view, this is required attribute. 
-- {your_fragment_height} : Specify the basic height of the view, this is required attribute. 
+  <-- app:textStyle="@style/{your_text_style_for_video_title}" 
+           			app:imageStyle="@style/{your_image_style_for_video_thumbnail}"> -->
+				
+- {desired_width} : Specify the basic width of the view, this is required attribute. 
+- {desired_height} : Specify the basic height of the view, this is required attribute. 
 
 - app:feedLayout={grid | horizontal | vertical} : This attribute specifies the layout for displaying thumbnails. The possible values are 
 		
