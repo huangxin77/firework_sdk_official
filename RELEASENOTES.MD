@@ -14,7 +14,7 @@
    * With Exoplayer r2.2.2 instead of v2.11.3, appropriate if you are already using Exoplayer r2.2.2 in your application. 
     
 
-## v4.0.5 - variant of v4.0.0 ##
+## v4.1.1 - variant of v4.2.0 ##
     
     * with Exoplayer v2.11.7 
 
