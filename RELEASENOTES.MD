@@ -1,12 +1,8 @@
 # Release notes #
 
-## v4.0.0 (2020-07-29) Recommended ##
+## v4.2.0 (2020-09-28) Recommended ##
 
-*   Admob Ads: Added Admob native ads and Admob banner ads support. 
-    you can configure the the type of admob ads you want to display during video playback
-    
-    * Native ads: Native ads are displayed after user watches `n` videos. You can configure `n`
-    * Banner ads: Banner ads are displayed on top of video player after user watches video for `n` loops. You can configure `n`. 
+*   You can disable autoplay with xml attribute app:autoPlayOnFeed="false" and enable it with app:autoPlayOnFeed="true"
     
 *   Libraries 
     
