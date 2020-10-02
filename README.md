@@ -109,12 +109,12 @@ There are two ways of integrating Firework video feed in your application.
 Here is an example of VideoFeedView that you can modify according to your needs and add to view hierarchy. 
 
 			<com.loopnow.fireworklibrary.VideoFeedView 
-	   			android:name="com.loopnow.fireworklibrary.views.VideoFeedFragment"
 	   			android:layout_width="{desired_width}"
 	   			android:layout_height="{desired_height}"
 	   			app:showTitle="{true or false}"
 	   			app:feedLayout="{grid | horizontal | vertical}"
 	  			app:columns="{number_of_columns_if_your_feedLayout_is_grid, default value is 2}"
+				app:category="{This is in most case not required, please check with your account manager for available categories}"
 	   		
 			/> 
 			
@@ -189,9 +189,7 @@ We recommend using layout_height="match_parent" when feedLayout is specified as 
 	
 7. app:gutterSpace: When you use layout="grid", gutterSpace is the space between two consecutive columns & rows. By default it is 8dp but you can customize it. 
 
-		<fragment android:id="@+id/video_fragment"
-                  	android:name="com.loopnow.fireworklibrary.views.VideoFeedFragment"
-                  
+		<com.loopnow.fireworklibrary.views.VideoFeedView"                  
                   	app:gutterSpace="8dp"
 			app:gutterSpace="{your_desired_value}"
         		/>
@@ -199,8 +197,7 @@ We recommend using layout_height="match_parent" when feedLayout is specified as 
 
 8. app:itemLayout: In VideoFeedFragment, you can overwrite the default layout used for the feed items. Use attribute itemLayout to provide custom layout. 
 
-		<fragment android:id="@+id/video_fragment"
-                  	android:name="com.loopnow.fireworklibrary.views.VideoFeedFragment"
+		<com.loopnow.fireworklibrary.views.VideoFeedView
                   	app:itemLayout="@layout/{your_custom_layout}
         		/>
 When you provide your custom layout, it is must that the layout includes TextView with id caption and ImageView with id thumbnail. 
@@ -208,6 +205,8 @@ When you provide your custom layout, it is must that the layout includes TextVie
 Please refer to source code layout/fragment_grid.xml to know more about using VideoFeedFragment.  
 
 9. app:enableShare={true|false} : if you specify enableShare=true , then sharing of the video is enabled. Share icon is placed at the right|bottom. By default enableShare is true and you can disable it by setting enableShare=false
+
+10. app:category : In case you only want to display videos from certain categories, you can specify one category here. Please note that there are only few categories available and by selecting a categoy you could missing out on millions of amazing videos. Please check with your account manager for the available categories. It is better to not include this attribute, in which case our recommendation engine would recommend videos based on the user interest. 
 	
 
 2. FireworkPlayerFragment : 
