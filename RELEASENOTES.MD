@@ -1,6 +1,19 @@
 # Release notes #
 
-## v4.2.0 (2020-09-28) Recommended ##
+## v4.2.3 (2020-10-01) Recommended ##
+* EVerything from v4.2.0
+* Support added for attribute app:category in VideoFeedView. This will only display videos from a given category. 
+   
+        <com.loopnow.fireworklibrary.views.VideoFeedView
+            android:id="@+id/integrated_videofeed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:feedLayout="horizontal"
+            app:category="Food"
+    
+            />
+            
+## v4.2.0 (2020-09-28)
 
 *   You can disable autoplay with xml attribute app:autoPlayOnFeed="false" and enable it with app:autoPlayOnFeed="true"
     
