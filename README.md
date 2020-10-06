@@ -23,31 +23,32 @@ https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
 		<application>	
 		....
 		....
-		
-			// Activity needed for video playback when.
-		 	<activity android:name="com.loopnow.fireworklibrary.PlaybackActivity"
-		 		android:screenOrientation="portrait"
-		 		android:theme="@style/FireworkSDK.NoActionBar.FullScreen"
-		 	/>
+				// Activity needed for video playback
+				<activity
+					android:name="com.loopnow.fireworklibrary.PlaybackActivity"
+					android:screenOrientation="portrait"
+					android:theme="@style/FireworkSDK.NoActionBar.FullScreen" />
 			
-			// Activity needed for starting a web browser , when CTA on the advertisement is clicked. 
-			<activity android:name="com.loopnow.fireworklibrary.views.FireworkWebClientActivity"
-            			android:theme="@style/AppTheme.NoActionBar.FullScreen"
-            		/>
-			
-			// Service used for prefetching of next video , if all data for currently playing video is fetched. 
-        		<service android:name="com.loopnow.fireworklibrary.views.CacheService" />
+				// Activity needed for starting a web browser , when CTA on the advertisement is clicked. 
+				<activity
+					android:name="com.loopnow.fireworklibrary.views.FireworkWebClientActivity"
+					android:theme="@style/AppTheme.NoActionBar.FullScreen" />
 
-        		// Instead of providing app_id in VideoFeedFragment xml , you can specify it in AndroidManifest.xml
-			<meta-data android:name="Firework:AppID" android:value="{app_id provided to you}" />
-        
-			// We plan on using advertising_id to improve target ads so that you can monetize better. 
-			// This is needed for to get advertising id using Android ad sdk.  
-			<meta-data
-            			android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-            			android:value="true"/>
-	    
-	    
+
+				// Service used for prefetching of next video , if all data for currently playing video is fetched. 
+				<service android:name="com.loopnow.fireworklibrary.views.CacheService" />
+				
+				// Instead of providing app_id in VideoFeedFragment xml , you can specify it in AndroidManifest.xml
+				<meta-data
+					android:name="Firework:AppID"
+					android:value="{app_id provided to you}" />
+
+				// We plan on using advertising_id to improve target ads so that you can monetize better. 
+				// This is needed for to get advertising id using Android ad sdk.  
+				<meta-data
+					android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+					android:value="true" />
+			
 		</application>
     
 - [X] In your application's build.gradle, add 
@@ -108,7 +109,7 @@ There are two ways of integrating Firework video feed in your application.
 
 Here is an example of VideoFeedView that you can modify according to your needs and add to view hierarchy. 
 
-			<com.loopnow.fireworklibrary.VideoFeedView 
+			<com.loopnow.fireworklibrary.views.VideoFeedView
 	   			android:layout_width="{desired_width}"
 	   			android:layout_height="{desired_height}"
 	   			app:showTitle="{true or false}"
