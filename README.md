@@ -6,7 +6,8 @@ https://github.com/loopsocial/firework_sdk_official/blob/master/FireworkDemo.apk
 
 ### Prerequisites 
 To integrate FireworkSDK into your applicaiton, you have to register your application with Firework platform and get unique
-app_id.
+app_id. To get the app_id 
+
 - [X] Provide your application's applicationId / package name to the business team / engineering team you are co-ordinating with. If your applicationId is different from package name, provide applicationId.
 - [X] We will email you the app_id.
 
@@ -14,8 +15,9 @@ The app_id is used to authenticate your application with the server. Authenticat
  
 ### How to add library to your project? 
 
-https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
+Please select the appropriate version of firework sdk library. 
 
+https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
 
 
 - [X] In AndroidManifest.xml, add 
@@ -98,10 +100,16 @@ https://github.com/loopsocial/firework_sdk_official/blob/master/RELEASENOTES.MD
 
 ### Integrating video feed in your application.  
 
-There are two ways of integrating Firework video feed in your application. 
+There are two ways of playing Firework videos in your application.  
+1. Display video thumbnails in one of the three available layouts; Vertical, Horizontal & Grid and let user scroll through the thumbnails and click on any to play the video. Once video starts to play user can swipe left or right to play previous or next video. 
+
+2. In the second way, you can skip including the thumbnails and straight away start playing the video. User can swipe left or right to play previous or next video. 
 
 
-1. VideoFeedView: If you want to display video thumbnails and start playing the video only after user clicks on one of them, then dropping custom view, VideoFeedView into your view hierarchy is the easiest and quickest way to integrate firework video feed into your app. VideoFeedView displays thumbnails in one of three supported layouts: 
+### The following section discusses method 1. 
+
+### VideoFeedView 
+If you want to display video thumbnails and start playing the video only after user clicks on one of them, then dropping in VideoFeedView in your view hierarchy is the easiest and quickest way to integrate firework video feed into your app. VideoFeedView displays thumbnails in one of three supported layouts: 
 
 - Vertical
 - Horizontal
@@ -116,33 +124,31 @@ Here is an example of VideoFeedView that you can modify according to your needs 
 	   			app:feedLayout="{grid | horizontal | vertical}"
 	  			app:columns="{number_of_columns_if_your_feedLayout_is_grid, default value is 2}"
 				app:category="{This is in most case not required, please check with your account manager for available categories}"
-	   		
+	   			app:textStyle="@style/{your_text_style_video_title}"
+				app:imageStyle="@style/{your_image_style_video_thumbnail}"
 			/> 
 			
 			
-  <-- app:textStyle="@style/{your_text_style_for_video_title}" 
-           			app:imageStyle="@style/{your_image_style_for_video_thumbnail}"> -->
 				
 - {desired_width} : Specify the basic width of the view, this is required attribute. 
 - {desired_height} : Specify the basic height of the view, this is required attribute. 
-
 - app:feedLayout={grid | horizontal | vertical} : This attribute specifies the layout for displaying thumbnails. The possible values are 
 		
-1. Grid: Will layout video feed in a multiple ```rows> x <columns>``` format. 
-It will scroll vertically. If optional attribute ```app:columns``` is not specified, the default columm number defaults to 2. 	
+a. Grid -  Will layout video feed in a multiple ```rows> x <columns>``` format. 
+It will scroll vertically. If optional attribute ```app:columns``` is not specified, the default columm number is 2. 	
 		
 <img src="screenshots/grid.jpg"  width="270" height="480"> <img src="screenshots/grid_with_title.jpg"  width="270" height="480">
 			
 			
-2. horizontal: Will layout video feed as a single row and will function as a horizontal scrollable view.
+b. horizontal -  Will layout video feed as a single row and will function as a horizontal scrollable view.
 		  
 <img src="screenshots/Horizontal_video_list.png"  width="270" height="480">
 	
-3. vertical : Will layout video feed as a single column and will function as a vertical scrollable view.
+c. vertical - Will layout video feed as a single column and will function as a vertical scrollable view.
 		
 <img src="screenshots/vertical.jpg"  width="270" height="480"> <img src="screenshots/vertical_with_title.jpg"  width="270" height="480">
 	
-We recommend using layout_height="match_parent" when feedLayout is specified as either Vertical or Grid and 		  using definite height defined either as % of the parent viewgroup's height or specified in terms of dp when 		       feedLayout is horizontal 
+We recommend using layout_height="match_parent" when feedLayout is specified as either Vertical or Grid and using definite height defined either as % of the parent viewgroup's height or specified in terms of dp when feedLayout is horizontal 
 	       
 	       e.g 
 	       
@@ -152,17 +158,17 @@ We recommend using layout_height="match_parent" when feedLayout is specified as 
 	       2. feedLayout="horizontal" 
 	       	  layout_height="200dp" 
 		  
-		  or if you are using ConstraintLayout
+		  or if you are using ConstraintLayout as a parent layout. 
 		  
 		  layout_height="0dp" 
 		  app:layout_constraintHeight_default="percent"
-              app:layout_constraintHeight_percent="0.40"
+              	 app:layout_constraintHeight_percent="0.40"
 		 
-3. app:columns: This is an optional attribute and is only relevant if feedLayout is grid. It has default value of 2. 
+d. app:columns - This is an optional attribute and is only relevant if feedLayout is grid. It has default value of 2. 
 
-4. app:showTitle={true|false} : This is an optional attribute. It can be either true or false. The default value is false. When true, video title is displayed. The position of the title is controlled by the attribute ```app:titlePosition```. The text style applied to title, can be specified with optional attribute ```app:textStyle```. 
+e. app:showTitle - {true|false} This is an optional attribute. It can be either true or false. The default value is false. When true, video title is displayed. The position of the title is controlled by the attribute ```app:titlePosition```. The text style applied to title, can be specified with optional attribute ```app:textStyle```. 
 
-5. app:textStyle: This is an optional attribute and when specified the style is applied to TextView displaying video title. If textStyle is not specified default style is applied. Below is the example of TextStyle usage. 
+f. app:textStyle - This is an optional attribute and when specified the style is applied to TextView displaying video title. If textStyle is not specified default style is applied. Below is the example of TextStyle usage. 
 	
 	```app:textStyle="@style/VideoTitleStyle"```
 
@@ -177,10 +183,10 @@ We recommend using layout_height="match_parent" when feedLayout is specified as 
    	</style>
   
 
-6. app:titlePosition={alignBottom:below}: When attribute showTitle is set to true, then app:titlePosition="alignBottom" will align the bottom of TextView displaying title to the bottom of the thumbnail and app:titlePosition="below" will align the top of the TextView displaying title to the bottom of the thumbnail. 
+g. app:titlePosition - {alignBottom:below}: When attribute showTitle is set to true, then app:titlePosition="alignBottom" will align the bottom of TextView displaying title to the bottom of the thumbnail and app:titlePosition="below" will align the top of the TextView displaying title to the bottom of the thumbnail. 
 
 
-6. imageStyle: An optional attribute that can be used to define corner radius of the image. At present, only radius is supported. 
+h. imageStyle - An optional attribute that can be used to define corner radius of the image. At present, only radius is supported. 
 
 ```app:imageStyle="@style/ThumbnailStyle"```
 
@@ -188,31 +194,31 @@ We recommend using layout_height="match_parent" when feedLayout is specified as 
 	       <item name="android:radius">12dp</item>
 	</style>
 	
-7. app:gutterSpace: When you use layout="grid", gutterSpace is the space between two consecutive columns & rows. By default it is 8dp but you can customize it. 
+i. app:gutterSpace - When you use layout="grid", gutterSpace is the space between two consecutive columns & rows. By default it is 8dp but you can customize it. 
 
 		<com.loopnow.fireworklibrary.views.VideoFeedView"                  
-                  	app:gutterSpace="8dp"
-			app:gutterSpace="{your_desired_value}"
+			app:gutterSpace="{your_desired_value e.g 4dp}"
         		/>
 
-
-8. app:itemLayout: In VideoFeedFragment, you can overwrite the default layout used for the feed items. Use attribute itemLayout to provide custom layout. 
+j. app:itemLayout - In VideoFeedView, you can overwrite the default layout used for the feed items i.e thumbnail. Use attribute itemLayout to provide custom layout. 
 
 		<com.loopnow.fireworklibrary.views.VideoFeedView
                   	app:itemLayout="@layout/{your_custom_layout}
         		/>
 When you provide your custom layout, it is must that the layout includes TextView with id caption and ImageView with id thumbnail. 
 
-Please refer to source code layout/fragment_grid.xml to know more about using VideoFeedFragment.  
+k. app:enableShare - {true|false} if you specify enableShare=true , then sharing of the video is enabled. Share icon is placed at the right|bottom. By default enableShare is true and you can disable it by setting enableShare=false
 
-9. app:enableShare={true|false} : if you specify enableShare=true , then sharing of the video is enabled. Share icon is placed at the right|bottom. By default enableShare is true and you can disable it by setting enableShare=false
-
-10. app:category : In case you only want to display videos from certain categories, you can specify one category here. Please note that there are only few categories available and by selecting a categoy you could missing out on millions of amazing videos. Please check with your account manager for the available categories. It is better to not include this attribute, in which case our recommendation engine would recommend videos based on the user interest. 
+l. app:category : In case you only want to display videos from certain categories, you can specify one category here. Please note that there are only few categories available and by selecting a categoy you could missing out on millions of amazing videos. Please check with your account manager for the available categories. It is better to not include this attribute, in which case our recommendation engine would recommend videos based on the user interest. 
 	
+k. app:autoPlayOnFeed - {true | false } The default value is true.  In the VideoFeedView , one of the thumbnails will start playing video without audio and if you don't want this behavior you can turn it off by including this attribute in VideoFeedView. 
 
-2. FireworkPlayerFragment : 
+m. app:autoPlayOnComplete - { true | false } The default value is false. When video is playing in full screen mode, if you want next video to play as soon as the current one finishes playing then include this attribute in VideoFeedView and set value to true 
 
-The first approach using VideoFeedFragment displays video thumbnails and plays video once user clicks on one of the thumbnails but if you don't want to display thumbnails and start auto-playing the video, you should drop FireworkPlayerFragment into your view hierarchy. User can swipe right to go to next video and swipe left to go to previous video. 
+
+### FireworkPlayerFragment 
+
+The first approach using VideoFeedFragment displays video thumbnails and plays video once user clicks on one of the thumbnails but if you don't want to display thumbnails and start playing the video right away, you should drop FireworkPlayerFragment into your view hierarchy. User can swipe right to go to next video and swipe left to go to previous video. 
 
 		<fragment android:layout_width="match_parent"
             		android:layout_height="match_parent"
@@ -224,12 +230,56 @@ The first approach using VideoFeedFragment displays video thumbnails and plays v
 
 
 
+### Callbacks 
+
+The sdk provides two sets of callback, the code below is self explanatory . 
+
+FireworkSDK.addOnItemClickListener(object: VideoFeedAdapter.OnItemClickListener {
+   
+    override fun onItemClicked(positionInFeed: Int, title: String, uniqueVideoId: String, duration: Float) {
+        // called when user clicks on one of the thumbnails in the VideoFeedView
+    }
+})
+
+FireworkSDK.addVideoPlaybackStatusListener(object: FireworkSDK.VideoPlaybackStatusListener {
+    override fun buffering() {
+        // video is bufferring 
+    }
+
+    override fun playing() {
+	// video will begin playing 
+    }
+
+    override fun duration(duration: Long) {
+	// total duration of the video 
+    }
+
+    override fun completed() {
+	// the complete length of the video has been played 
+    }
+
+    override fun currentPosition(currentPosition: Long) {
+	// progress as the video is playing 
+    }
+
+    override fun nowPlaying(index: Int, title: String, encodedId: String) {
+	// details of the video that will begin to play 
+    }
+
+})
+
+
 ### Pagination
 VideoFeedFragment as well as FireworkPlayerFragment will progressively load small chunk of data as user scrolls the feed ensuring optimized use of network bandwidth.  
 
 
-### Video Playback
-When user clicks on one of the thumbnails from the video feed integrated in your application, FireworkSDK handles the onClick event and starts the video playback. If you have not already added PlaybackActivity to your AndroidManifest file, you should. The application will crash without it. 
+### Common Errors 
+
+1. When user clicks on one of the thumbnails from the video feed integrated in your application, FireworkSDK handles the onClick event and starts the video 	playback. If you have not already added PlaybackActivity to your AndroidManifest file, you should. The application will crash without it. 
+
+2. Blank feed - If there is mismatch between application id you provided  or app_id is wrong, authentication will fail and you won't see anything on the screen . You can check this condition using adb logcat | grep NetworkLog 
+
+
 
 
 
