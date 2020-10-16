@@ -209,8 +209,12 @@ When you provide your custom layout, it is must that the layout includes TextVie
 
 k. app:enableShare - {true|false} if you specify enableShare=true , then sharing of the video is enabled. Share icon is placed at the right|bottom. By default enableShare is true and you can disable it by setting enableShare=false
 
-l. app:category : In case you only want to display videos from certain categories, you can specify one category here. Please note that there are only few categories available and by selecting a categoy you could missing out on millions of amazing videos. Please check with your account manager for the available categories. It is better to not include this attribute, in which case our recommendation engine would recommend videos based on the user interest. 
-	
+l. app:category : In case you only want to display videos from certain categories, you can specify one category here. Please note that there are only few categories available and by selecting a categoy you could missing out on millions of amazing videos. Please check with your account manager for the available categories. It is better to not include this attribute, in which case our recommendation engine would recommend videos based on the user interest.  
+
+In case if you want to delay loading category and programatically set category, please include attribute 
+app:loadContent="false" in your XML defintion of VideoFeedView  and later set category programatically using VideoFeedView api loadContent("category name")
+e.g videoFeedView.loadContent("food")
+
 k. app:autoPlayOnFeed - {true | false } The default value is true.  In the VideoFeedView , one of the thumbnails will start playing video without audio and if you don't want this behavior you can turn it off by including this attribute in VideoFeedView. 
 
 m. app:autoPlayOnComplete - { true | false } The default value is false. When video is playing in full screen mode, if you want next video to play as soon as the current one finishes playing then include this attribute in VideoFeedView and set value to true 
@@ -233,6 +237,17 @@ The first approach using VideoFeedFragment displays video thumbnails and plays v
 ### Callbacks 
 
 The sdk provides two sets of callback, the code below is self explanatory . 
+
+ FireworkSDK.addVideoPlaybackTracker(object: FireworkSDK.VideoPlaybackTracker {
+            override fun videoWatched(title: String, id: String, duration: Float) {
+                // title and duration for which video was  watched 
+            }
+
+            override fun nowPlaying(title: String, id: String, duration: Float) {
+                
+            }
+        })
+	
 
 FireworkSDK.addOnItemClickListener(object: VideoFeedAdapter.OnItemClickListener {
    
@@ -262,9 +277,14 @@ FireworkSDK.addVideoPlaybackStatusListener(object: FireworkSDK.VideoPlaybackStat
 	// progress as the video is playing 
     }
 
-    override fun nowPlaying(index: Int, title: String, encodedId: String) {
+    override fun nowPlaying(autoPlay:Boolean, index: Int, title: String, encodedId: String) {
 	// details of the video that will begin to play 
     }
+    
+    over fun error(error:String) {
+    	// encourntered error while playing a video 
+    }
+    
 
 })
 
