@@ -237,8 +237,8 @@ The first approach using VideoFeedFragment displays video thumbnails and plays v
 ### Callbacks 
 
 The sdk provides two sets of callback, the code below is self explanatory . 
-
- FireworkSDK.addVideoPlaybackTracker(object: FireworkSDK.VideoPlaybackTracker {
+     
+      FireworkSDK.addVideoPlaybackTracker(object: FireworkSDK.VideoPlaybackTracker {
             override fun videoWatched(title: String, id: String, duration: Float) {
                 // title and duration for which video was  watched 
             }
