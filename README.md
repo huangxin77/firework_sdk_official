@@ -5,7 +5,7 @@ FireworkSDK is a library to integrate video feeds from ```Firework - a short for
 https://github.com/loopsocial/firework_sdk_official/blob/master/FireworkDemo.apk
 
 ### Prerequisites 
-To integrate FireworkSDK into your applicaiton, you have to register your application with Firework platform and get unique
+To integrate FireworkSDK into your application, you have to register your application with Firework platform and get unique
 app_id. To get the app_id 
 
 - [X] Provide your application's applicationId / package name to the business team / engineering team you are co-ordinating with. If your applicationId is different from package name, provide applicationId.
@@ -249,17 +249,17 @@ The sdk provides two sets of callback, the code below is self explanatory .
         })
 	
 
-FireworkSDK.addOnItemClickListener(object: VideoFeedAdapter.OnItemClickListener {
+    FireworkSDK.addOnItemClickListener(object: VideoFeedAdapter.OnItemClickListener {
    
-    override fun onItemClicked(positionInFeed: Int, title: String, uniqueVideoId: String, duration: Float) {
-        // called when user clicks on one of the thumbnails in the VideoFeedView
-    }
-})
+    	override fun onItemClicked(positionInFeed: Int, title: String, uniqueVideoId: String, duration: Float) {
+        	// called when user clicks on one of the thumbnails in the VideoFeedView
+    	}
+    })
 
-FireworkSDK.addVideoPlaybackStatusListener(object: FireworkSDK.VideoPlaybackStatusListener {
-    override fun buffering() {
-        // video is bufferring 
-    }
+    FireworkSDK.addVideoPlaybackStatusListener(object: FireworkSDK.VideoPlaybackStatusListener {
+    	override fun buffering() {
+        	// video is bufferring 
+    	}
 
     override fun playing() {
 	// video will begin playing 
