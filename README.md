@@ -288,6 +288,13 @@ The sdk provides two sets of callback, the code below is self explanatory .
 
 })
 
+	 FireworkSDK.addSdkStatusListener(object: FireworkSDK.SdkStatusListener {
+            override fun currentStatus(status: SdkStatus, extra: String) {
+                Log.v("StatusLog", " {sdk status details  ")
+            }
+
+        })
+
 
 ### Pagination
 VideoFeedFragment as well as FireworkPlayerFragment will progressively load small chunk of data as user scrolls the feed ensuring optimized use of network bandwidth.  
