@@ -1,6 +1,26 @@
 # Release notes #
 
-## v4.2.3 (2020-10-01) Recommended ##
+## v4.2.4 (2020-10-22) Recommended ## ( inherits 4.2.3 ) 
+
+* Added callback for SdkStatus
+
+      FireworkSDK.addSdkStatusListener(object: FireworkSDK.SdkStatusListener {
+            override fun currentStatus(status: SdkStatus, extra: String) {
+                Log.v("UiLog", " ${status.name}   $extra ")
+            }
+        })
+
+      Status Details : 
+      
+      Ok : Sdk initialized 
+      Error : Sdk failed to initialize 
+      ErrorLoadingContent : Error encountered while loading video feed
+      LoadingCotent :  Content is Loading ( i.e request is made and waiting for server to respond )  
+      VideoFeedOk : Video Feed Successfully Loaded
+      
+* Exo Player v2.11.7 
+
+## v4.2.3 (2020-10-01) 
 * EVerything from v4.2.0
 * Support added for attribute app:category in VideoFeedView. This will only display videos from a given category. 
    
@@ -19,7 +39,7 @@
     
 *   Libraries 
     
-    * Exoplayer v2.11.3
+    * Exoplayer v2.11.7
     * AndroidX 
     
 ## v4.0.4 - variant of v4.0.0 ##
