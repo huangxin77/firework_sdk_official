@@ -20,6 +20,17 @@
       
 * Exo Player v2.11.7 
 
+* Programatically load content for a category 
+            
+            for example. 
+            videoView.loadContent("entertainment")
+ If you want to programatically set category and load content, it is recommended that you use attribute
+                        
+                 app:loadContent="false"  
+ int your xml. 
+ 
+ 
+
 ## v4.2.3 (2020-10-01) 
 * EVerything from v4.2.0
 * Support added for attribute app:category in VideoFeedView. This will only display videos from a given category. 
