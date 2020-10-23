@@ -24,10 +24,12 @@
             
             for example. 
             videoView.loadContent("entertainment")
- If you want to programatically set category and load content, it is recommended that you use attribute
+ 
+            If you want to programatically set category and load content, it is recommended that you use attribute
                         
                  app:loadContent="false"  
- int your xml. 
+                 
+            int your xml. This will prevent default content being loaded until you decide to load it programatically. 
  
  
 
