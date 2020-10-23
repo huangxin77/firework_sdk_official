@@ -1,6 +1,6 @@
 # Release notes #
 
-## v4.2.4 (2020-10-22) Recommended ## ( inherits 4.2.3 ) 
+## v4.2.5 (2020-10-22) Recommended ## ( inherits 4.2.3 ) 
 
 * Added callback for SdkStatus
 
