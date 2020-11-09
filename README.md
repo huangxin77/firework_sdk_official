@@ -248,7 +248,20 @@ The sdk provides two sets of callback, the code below is self explanatory .
             }
         })
 	
+    use for versions v4.2.8 and above 
+    videoFeedView.addOnItemClickedListener(object: OnItemClickedListener {
+                    override fun onItemClicked(
+                        index: Int,
+                        title: String,
+                        id: String,
+                        videoDuration: Float
+                    ) {
+                        Log.v("EventLog", " $index $title $id $videoDuration")
+                    }
+                })
+		
 
+    @Deprecated from version v4.2.8 
     FireworkSDK.addOnItemClickListener(object: VideoFeedAdapter.OnItemClickListener {
    
     	override fun onItemClicked(positionInFeed: Int, title: String, uniqueVideoId: String, duration: Float) {
